@@ -1,5 +1,6 @@
 # Lesson 01 - Mobile Interfaces
 
+
 This lesson focuses on two things:
 
 1. establish a firm foundation for an understanding of mobile app design and development and the tools students will use to create apps, and 
@@ -56,7 +57,7 @@ _Goal: learn how to read and draw system diagrams (45 min)_
 
 _Goal: learn and repeat the git workflow for the class_
 
-* Install SourceTree (Post SourceTree to slack)
+* Install Github for Mac (<http://mac.github.com>)
 * Github account signup
 * Terminology
     * Git
@@ -71,48 +72,12 @@ _Goal: learn and repeat the git workflow for the class_
 * Workflow
     * Fork the repo on Github
     * Clone to the local machine
-    * Plant a snarky comment into ViewController.swift
     * Place exercise into Lesson 00 folder
-    * Add the changes to the Index (git add)
-    * Commit the changes (git commit)
-    * Push to github (git push)
-    * Browse in web interface. Look for the snarky comment.
+    * Commit the changes
+    * Push to github (Sync)
+    * Browse in web interface.
 
 
-### Hackulator Example Project
-
-* A tour of Hackulator. (30 min)
-* Structure of the code.
-* Interface Builder files
-    * Main storyboard
-    * NIBs
-* Q+A
-
-
-### Mobile App Design
-
-Go over terminology and paradigms of mobile app design. (30 min)
-
-* How is mobile different?
-    * Less UI real estate
-    * Wide range of devices
-    * Touch gestures
-    * Usage context
-    * Network latency
-* Gestural Interfaces
-* Device-Specific Guidelines
-* Mobile Design Patterns
-    * Navigation
-    * Screen-level actions
-    * User onboarding
-    * Lists, filtering, and empty sets
-    * Dialog boxes
-
-### Present the Assignment
-
-Due on Thursday, April 30.
-
-See the PDF description and standards for grading [here](https://github.com/ga-students/MOB-NYC-3/tree/master/Assessments_Challenges/Week%2001)
 
 ### Exit Tickets
 
