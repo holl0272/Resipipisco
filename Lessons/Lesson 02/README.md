@@ -27,6 +27,7 @@ The content on the class repository has been updated! Go through the process of 
     * Right-click on MOB-NYC-3 in the sidebar
     * Select "Open in Finder"
 
+
 ### Mobile App Design
 
 Go over terminology and paradigms of mobile app design. (30 min)
