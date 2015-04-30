@@ -2,8 +2,9 @@
 
 ## Lesson Objectives
 
-* Apply Optionals and explain when and how to use them.
+* Review variables, values, and types
 * Utilize control flow to create a simple program flow in playgrounds.
+* Apply Optionals and explain when and how to use them.
 * Identify functions and implement best practices
 * Be able to call and define functions that take parameters
 * Be able to use the returned value from a function
@@ -11,6 +12,7 @@
 
 ## Lesson Topics
 
+* Review variables
 * Control Flow
     * Review of Bool
     * Bools + Conditionals
