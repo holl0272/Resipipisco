@@ -72,7 +72,9 @@
             <a href="http://mobbook.generalassemb.ly/week02/swift.html">3.1</a>,
             <a href="http://mobbook.generalassemb.ly/week02/definitions.html">3.2</a>
         </td>
-        <td><strong>2015 04 30</strong><br>04 - Intro to Functions</td>
+        <td><strong>2015 04 30</strong><br>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2004">04 - Intro to Functions</a>
+        </td>
     </tr>
     
     <tr>
