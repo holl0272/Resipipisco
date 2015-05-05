@@ -73,22 +73,46 @@
             <a href="http://mobbook.generalassemb.ly/week02/definitions.html">3.2</a>
         </td>
         <td><strong>2015 04 30</strong><br>
-            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2004">04 - Intro to Functions</a>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2004">
+                04 - Intro to Control Flow</a>
+            <br>
+            <em>Assessment #1 Due</em>
         </td>
     </tr>
     
     <tr>
         <td><strong>Wk 3</strong></td>
         <td>2</td>
-        <td><strong>2015 05 05</strong><br>05 - Interface Builder and Code</td>
-        <td><strong>2015 05 07</strong><br>06 - Object-Oriented Programming</td>
+        <td><strong>2015 05 05</strong><br>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2005">
+                05 - Introduction to Functions
+            </a>
+            <br>
+            <a href="http://mobbook.generalassemb.ly/week02/swift.html">3.1</a>
+        </td>
+        <td><strong>2015 05 07</strong><br>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2006">
+                06 - Object-Oriented Programming
+            </a>
+            <br>
+            <a href="http://mobbook.generalassemb.ly/week03/terms.html">4.1</a>
+        </td>
     </tr>
     
     <tr>
         <td><strong>Wk 4</strong></td>
         <td>2</td>
-        <td><strong>2015 05 12</strong><br>07 - UI Elements and View Controllers</td>
-        <td><strong>2015 05 14</strong><br>08 - Data Structures - Arrays and Dictionaries</td>
+        <td><strong>2015 05 12</strong><br>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2007">
+                07 - Interface Builder and Code<br>
+                UI Elements and View Controllers
+            </a>
+            <br>
+        </td>
+        <td><strong>2015 05 14</strong><br>
+            08 - Data Structures
+            <br>
+        </td>
     </tr>
     
     <tr>
@@ -144,7 +168,7 @@
         <td><strong>Wk 12</strong></td>
         <td></td>
         <td><strong>2015 07 07</strong><br>24 - Final Project Presentations</td>
-        <td>BONUS SESSION? = App Store Submission Process</td>
+        <td>BONUS SESSION<br>App Store Submission Process</td>
     </tr>
     
     
@@ -155,8 +179,6 @@
 ## Exercises, Assignments, and Projects
 
 Work for the class consists of in-class exercises, "homework" assignments, and two projects.
-
-Each assignment will be assigned on a Tuesday. The following Tuesday, Angel will hold a brief session before (or after) class to go over techniques for solving the problem. The assignment will be due 2 days later on the Thursday. i.e. Each assignment will be due 9 days after it is assigned. A solution will be posted after class the day the assignment is due.
 
 <table>
     <thead>
@@ -170,6 +192,22 @@ Each assignment will be assigned on a Tuesday. The following Tuesday, Angel will
             <td><strong>00</strong></td>
             <td>Finish the Photo Collection exercise</td>
         </tr>
+        <tr>
+            <td><strong>01</strong></td>
+            <td>
+                <a href="https://github.com/ga-students/MOB-NYC-3/blob/master/Assessments_Challenges/Week%2001/MOB_Week%201%20Assignment.pdf">
+                    Assessment 01 - Create a Vanity App
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>02</strong></td>
+            <td>
+                <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2004">
+                    Complete the Intro to Swift playground
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -182,7 +220,8 @@ This is where you'll receive announcements, reminders about assignments, additio
 
 ## Office Hours
 
-TBD.
+**Angel** - Wednesdays 6pm to 9pm at GA (time still may change)  
+**William** - Saturday afternoons at GA
 
 ## Github
 
