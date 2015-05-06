@@ -102,6 +102,15 @@ for (var i = 2; i < isItPrime; i++) {
     }
 }
 
+//for-in syntax (for-each)
+for x in 0...10 { //inclusive 0 to 10 == include the number 10
+    println(x)
+}
+
+for y in 0..<10 { //exclusive 0 to 10 == doesn't include number 10
+    print(y)
+}
+
 //optionals
 var name : String?
 name = "Eric"
@@ -116,6 +125,7 @@ if let _name = name {
 else {
     println("nil!")
 }
+
 
 //name
 //name!
