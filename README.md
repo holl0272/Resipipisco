@@ -110,7 +110,7 @@
             <br>
         </td>
         <td><strong>2015 05 14</strong><br>
-            08 - Data Structures
+            08 - Swift Data Structures
             <br>
         </td>
     </tr>
@@ -201,10 +201,16 @@ Work for the class consists of in-class exercises, "homework" assignments, and t
             </td>
         </tr>
         <tr>
-            <td><strong>02</strong></td>
+            <td><strong>02 - 03</strong></td>
             <td>
                 <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2004">
                     Complete the Intro to Swift playground
+                </a><br>
+                <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2005">
+                    Complete the Functions playground
+                </a><br>
+                <a href="https://github.com/ga-students/MOB-NYC-3/blob/master/Lessons/Lesson%2006/Lesson%2006%20-%20OOP%201.pdf">
+                    Complete the "Simulate a Game" near the end of the Lesson 06 slides (Slide 35).
                 </a>
             </td>
         </tr>
@@ -220,8 +226,7 @@ This is where you'll receive announcements, reminders about assignments, additio
 
 ## Office Hours
 
-**Angel** - Wednesdays 6pm to 9pm at GA (time still may change)  
-**William** - Saturday afternoons at GA
+Determined on a weekly basis...
 
 ## Github
 
