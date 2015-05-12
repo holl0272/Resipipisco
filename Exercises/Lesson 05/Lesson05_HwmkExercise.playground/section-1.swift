@@ -126,6 +126,15 @@ func tellNameAndAge(name:String,yearOfBirth:Int) {
 tellNameAndAge("Eric",1981)
 */
 
+//for-in loop
+for x in 1...10 {
+    println(x)
+}
+
+for y in 1..<10 {
+    println(y)
+}
+
 // Call knock knock
 
 func knockknock() {
