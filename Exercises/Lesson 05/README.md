@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lesson 05 - Introduction to Functions
 
 ## Lesson Objectives
@@ -11,9 +10,6 @@
 ## Topic Outline
 
 * Functions
-    * With no parameters
-    * With parameters
-    * With parameters and return values
-=======
-# Lesson 05 Exercise
->>>>>>> ga-students/master
+* With no parameters
+* With parameters
+* With parameters and return values
