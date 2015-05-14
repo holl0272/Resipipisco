@@ -10,6 +10,6 @@
 ## Topic Outline
 
 * Functions
-* With no parameters
-* With parameters
-* With parameters and return values
+    * With no parameters
+    * With parameters
+    * With parameters and return values
