@@ -158,7 +158,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="falcon.jpg" id="e3H-QX-sum">
-                                <rect key="frame" x="32" y="276.00000074433115" width="256" height="164"/>
+                                <rect key="frame" x="32" y="276" width="256" height="164.00000294558288"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
