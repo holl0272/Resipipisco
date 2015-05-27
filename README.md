@@ -121,19 +121,24 @@
         <td><strong>Wk 5</strong></td>
         <td>2</td>
         <td><strong>2015 05 19</strong><br>
-            09 - Table Views
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2009">
+                09 - Table Views
+            </a>
         </td>
         <td><strong>2015 05 21</strong><br>
-            10 - iOS Design Patterns
-            <br>
-            <em>Assessment #3 due</em>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2010">
+                10 - App-Building Workflow
+            </a>
         </td>
     </tr>
     
     <tr>
         <td><strong>Wk 6</strong></td>
         <td></td>
-        <td><strong>2015 05 26</strong><br>11 - MIDTERM 1</td>
+        <td><strong>2015 05 26</strong><br>
+            11 - MIDTERM 1<br>
+            <em>Assessment #3 due</em>
+        </td>
         <td><strong>2015 05 28</strong><br>12 - MIDTERM 2</td>
     </tr>
     
