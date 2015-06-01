@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
     
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
     
     func appendNewDigit(digit:String) {
         self.inputValue += digit
+//        self.inputValueLabel.layer.borderWidth = 1.0;
     }
     
     //get inputValue and convert to a Double
