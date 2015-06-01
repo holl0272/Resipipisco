@@ -1,5 +1,49 @@
 import Foundation
 
+class Dog {
+    var yearBorn : Int?
+    
+    var age : Int? {
+        
+        //Getter
+        //Used for the "object.prop" syntax
+        get {
+            if let _yearBorn = self.yearBorn {
+                return 2015 - _yearBorn
+            }
+            else {
+                return nil
+            }
+        }
+        
+        //Setter
+        //Used for the "object.prop = ..." syntax
+        set (newAge) {
+            self.yearBorn = 2015 - newAge!
+            self.updateAgeLabel()
+        }
+    }
+    
+    func updateAgeLabel() {
+        
+    }
+    
+    var name : String
+    init(name:String) {
+        self.name = name
+    }
+}
+
+let tycoon = Dog(name:"Tycoon")
+tycoon.name
+
+tycoon.yearBorn = 2013
+tycoon.age
+
+tycoon.age = 3
+tycoon.yearBorn
+tycoon.age
+
 //Enumerations
 
 enum ConversionMode {
@@ -60,21 +104,21 @@ sample.answer
 sample.remainder
 
 
-class Dog {
+class Cat {
     var name :String
     init(name:String) {
         self.name = name
     }
     
-    func bark() {
+    func pur() {
         let message = self.saysWhat()
         println("\(name) says \(message)!")
     }
     
     func saysWhat() -> String {
-        return "woof"
+        return "me-ow"
     }
 }
 
-let toshi = Dog(name:"Toshi")
-toshi.bark()
+let toshi = Cat(name:"Toshi")
+toshi.pur()
