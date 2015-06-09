@@ -154,7 +154,7 @@
             <em>Assessment #4 assigned</em>
         </td>
         <td><strong>2015 06 04</strong><br>
-            14 - iOS Design Patterns
+            14 - Views and Interactivity
         </td>
     </tr>
     
@@ -162,7 +162,9 @@
         <td><strong>Wk 8</strong></td>
         <td>3</td>
         <td><strong>2015 06 09</strong><br>
-            15 - Files and Persistence 1<br>
+            <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2015">
+                15 - Files and Persistence 1
+            </a><br>
             <em>Midterm due</em>
         </td>
         <td><strong>2015 06 11</strong><br>
