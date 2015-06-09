@@ -43,6 +43,7 @@ func romanToDecimal(org:String) -> Int {
             temp += 0
         }
     }
+    
     return temp
 }
 
@@ -126,7 +127,7 @@ var orgString : String = "MMMDLXVIIII"
 
 var opt : String = "MMMDLXIX"
 
-println(orgString)
+
 if orgString.rangeOfString("VIIII") != nil{
     orgString.stringByReplacingOccurrencesOfString("VIIII", withString:"IX")
 }
