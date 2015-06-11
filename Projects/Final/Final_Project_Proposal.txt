@@ -1,0 +1,148 @@
+MBO: Final Project Proposal
+
+//////////////////////////
+TITLE
+//////////////////////////
+
+  >> TBD
+
+//////////////////////////
+APP DESCRIPTION
+//////////////////////////
+
+  >> Fact:
+
+    At any given time, 24 hours a day, 7 days a week, there are 10-20 A.A. meetings being held in NYC, the surrounding burrows and counties within the Tri-state.
+
+  >> A.A.Groups in the Tri-State:
+
+    New York
+      Manhattan: 372
+      Queens: 203
+      Brooklyn: 191
+      Bronx: 101
+      Nassau: 88
+      Staten Island: 93
+      Suffolk: 57
+      Westchester: 160
+      Orange: 40
+      Putnam/Dutches: 38
+      Rockland: 37
+      Sullivan/Green/Ulster: 15
+
+    New Jersey: 19
+    Connecticut: 15
+
+    TOTAL: 1429
+
+  >> Number of Meetings:
+
+    TOTAL: 3679
+
+  >> Data Source:
+
+    Parsed from http://www.nyintergroup.org/
+    I've already built the DB which houses this parsed data
+
+  >> Problem/Issue:
+
+    Finding a meeting is difficult...
+
+    The sole resource is published by the Inter-group organization in two mediums:
+
+      1) A directory, printed on flimsy paper with a two staple binding.  Any printed material is inherently outdated and cumbersome to carry on your person.  It's easily destroyed through light wear and tear and next to impossible to search through it's poorly laid out hierarchy.
+
+      2) A website, which is difficult to navigate, out dated and not mobile friendly.
+
+  >> App Solution:
+
+    Through geo location, the app will drop pins at the location of meetings within the user's proximity based on the time of day.
+
+  >> Example:
+
+    It's 6:40pm and the user is standing on the corner of 8th Ave and 14th street.  Within 4 blocks, 3 pins are dropped for meetings beginning at 7pm.
+
+    Expand the range and within 6 blocks, 7 pins are dropped.
+
+    There are 5 meetings within this range, however, are not shown because they began at 6:30.
+
+    Tapping on any one pin will display the meetings particulars:
+
+      - Group Name
+      - Address/Location
+      - Special Directions
+      - Days/Hours
+      - Types of Meetings:
+          Beginners meeting
+          Big Book meeting
+          Closed Discussion meeting
+          Step meeting
+          Tradition meeting
+          Open meeting
+          Open Discussion meeting
+      - Accessibility:
+          Spanish speaking group
+          Wheelchair accessible meeting place
+
+//////////////////////////
+APP REQUIREMENTS
+//////////////////////////
+
+  >> General
+
+    App Icon/Name
+      - Non-discrete
+    Security/Unlock Feature
+      - pin
+      - finger print
+
+  >> Lite Version
+
+    User will be able to:
+
+      - Create a profile
+        ~ user Name
+        ~ set unlock preference
+          . pin
+          . thumb print
+        ~ set first date/time of sobriety
+
+      - Persistent counter
+        ~ animated SEC, MIN, HR, DAYS sober clock
+
+      - View mile stones
+        ~ graphic representation of chips
+        ~ remaining days to unlock; toggles gray to color after count is reached
+
+      - "Need Help Now" Button
+        ~ one tab button calls local assistance hot-line
+
+      - Push Notifications of Anniversaries
+
+      - In App purchase option for full version
+
+  >> Paid (Full) Version [portion of proceeds donated to A.A.]
+
+      - Geo location of surrounding meetings
+        ~ rate meetings
+        ~ add meetings to favorites
+        ~ schedule reminder alarms of meetings
+        ~ filter proximity results by:
+          . distance (within: blocks, miles, etc.)
+          . time
+            ..starting withing: mins, hours
+            ..starts/ends at
+
+      - Add Contacts
+        ~ Reassign "Need Help Now" to user dictated contact (Sponsor)
+        ~ keep names/numbers out of phone contact list
+        ~ one click call feature
+
+
+//////////////////////////
+WIRE FRAMES
+//////////////////////////
+
+  >> http://framebox.org/ubht
+
+
