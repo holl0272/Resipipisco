@@ -19,6 +19,15 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    self.tabBarController?.tabBar.hidden = false
+        
+    }
+    
+    
+
 
 
 }
