@@ -45,8 +45,8 @@ class ModalViewController: UIViewController {
             
             var newDog = Dog(name:dogName,breed:dogBreed,color:dogColor,age:dogAge,sex:dogSex,weight:dogWeight,height:dogHeight,barkSound:dogBark)
             
-            let navigator = self.presentingViewController as UINavigationController
-            let controller = navigator.viewControllers[0] as MasterViewController
+            let navigator = self.presentingViewController as! UINavigationController
+            let controller = navigator.viewControllers[0] as! MasterViewController
             
             controller.insertNewObject(newDog)
             

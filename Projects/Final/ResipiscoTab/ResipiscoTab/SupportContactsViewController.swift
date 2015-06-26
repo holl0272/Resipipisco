@@ -1,14 +1,14 @@
 //
-//  ThirdViewController.swift
+//  SupportContactsViewController.swift
 //  ResipiscoTab
 //
-//  Created by Eric Holland on 6/14/15.
+//  Created by Eric Holland on 6/21/15.
 //  Copyright (c) 2015 Eric Holland. All rights reserved.
 //
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class SupportContactsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

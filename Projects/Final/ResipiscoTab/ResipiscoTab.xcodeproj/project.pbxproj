@@ -8,15 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5C1569891B2DD0F7006E0641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569881B2DD0F7006E0641 /* AppDelegate.swift */; };
-		5C15698B1B2DD0F7006E0641 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C15698A1B2DD0F7006E0641 /* FirstViewController.swift */; };
-		5C15698D1B2DD0F7006E0641 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C15698C1B2DD0F7006E0641 /* SecondViewController.swift */; };
+		5C15698B1B2DD0F7006E0641 /* MeetingFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C15698A1B2DD0F7006E0641 /* MeetingFinderViewController.swift */; };
+		5C15698D1B2DD0F7006E0641 /* DayCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C15698C1B2DD0F7006E0641 /* DayCounterViewController.swift */; };
 		5C1569901B2DD0F7006E0641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C15698E1B2DD0F7006E0641 /* Main.storyboard */; };
 		5C1569921B2DD0F7006E0641 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1569911B2DD0F7006E0641 /* Images.xcassets */; };
 		5C1569951B2DD0F7006E0641 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1569931B2DD0F7006E0641 /* LaunchScreen.xib */; };
 		5C1569A11B2DD0F7006E0641 /* ResipiscoTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569A01B2DD0F7006E0641 /* ResipiscoTabTests.swift */; };
-		5C1569AB1B2DD220006E0641 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569AA1B2DD220006E0641 /* ThirdViewController.swift */; };
+		5C1569AB1B2DD220006E0641 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569AA1B2DD220006E0641 /* SupportViewController.swift */; };
 		5C1569AD1B2E1CFD006E0641 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569AC1B2E1CFD006E0641 /* LogInViewController.swift */; };
 		5C1569DD1B326A97006E0641 /* PasscodeRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569DC1B326A97006E0641 /* PasscodeRecoveryViewController.swift */; };
+		5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */; };
+		5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */; };
+		5C54FAE01B350BCC009233B1 /* DayCounterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */; };
+		5C54FAE21B361674009233B1 /* MasterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAE11B361674009233B1 /* MasterSettingsViewController.swift */; };
+		5C54FAE41B366BE6009233B1 /* DayCounterDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAE31B366BE6009233B1 /* DayCounterDashboardViewController.swift */; };
+		5C54FAE61B366C25009233B1 /* DayCounterChipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAE51B366C25009233B1 /* DayCounterChipsViewController.swift */; };
+		5C54FAE81B367248009233B1 /* SupportFellowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAE71B367248009233B1 /* SupportFellowsViewController.swift */; };
+		5C54FAEA1B36734B009233B1 /* SupportContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAE91B36734B009233B1 /* SupportContactsViewController.swift */; };
+		5C54FAEC1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAEB1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift */; };
+		5C54FAEE1B368252009233B1 /* MeetingFinderDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAED1B368252009233B1 /* MeetingFinderDashboardViewController.swift */; };
+		5C54FAF01B3987A6009233B1 /* AppInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FAEF1B3987A5009233B1 /* AppInitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +44,28 @@
 		5C1569831B2DD0F7006E0641 /* ResipiscoTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResipiscoTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1569871B2DD0F7006E0641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1569881B2DD0F7006E0641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C15698A1B2DD0F7006E0641 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5C15698C1B2DD0F7006E0641 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5C15698A1B2DD0F7006E0641 /* MeetingFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFinderViewController.swift; sourceTree = "<group>"; };
+		5C15698C1B2DD0F7006E0641 /* DayCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounterViewController.swift; sourceTree = "<group>"; };
 		5C15698F1B2DD0F7006E0641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C1569911B2DD0F7006E0641 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C1569941B2DD0F7006E0641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5C15699A1B2DD0F7006E0641 /* ResipiscoTabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResipiscoTabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C15699F1B2DD0F7006E0641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1569A01B2DD0F7006E0641 /* ResipiscoTabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResipiscoTabTests.swift; sourceTree = "<group>"; };
-		5C1569AA1B2DD220006E0641 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5C1569AA1B2DD220006E0641 /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		5C1569AC1B2E1CFD006E0641 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5C1569DC1B326A97006E0641 /* PasscodeRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeRecoveryViewController.swift; sourceTree = "<group>"; };
+		5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportSettingsViewController.swift; sourceTree = "<group>"; };
+		5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFinderSettingsViewController.swift; sourceTree = "<group>"; };
+		5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCounterSettingsViewController.swift; sourceTree = "<group>"; };
+		5C54FAE11B361674009233B1 /* MasterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterSettingsViewController.swift; sourceTree = "<group>"; };
+		5C54FAE31B366BE6009233B1 /* DayCounterDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCounterDashboardViewController.swift; sourceTree = "<group>"; };
+		5C54FAE51B366C25009233B1 /* DayCounterChipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCounterChipsViewController.swift; sourceTree = "<group>"; };
+		5C54FAE71B367248009233B1 /* SupportFellowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFellowsViewController.swift; sourceTree = "<group>"; };
+		5C54FAE91B36734B009233B1 /* SupportContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportContactsViewController.swift; sourceTree = "<group>"; };
+		5C54FAEB1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFinderFavoritesViewController.swift; sourceTree = "<group>"; };
+		5C54FAED1B368252009233B1 /* MeetingFinderDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFinderDashboardViewController.swift; sourceTree = "<group>"; };
+		5C54FAEF1B3987A5009233B1 /* AppInitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +108,23 @@
 			isa = PBXGroup;
 			children = (
 				5C1569881B2DD0F7006E0641 /* AppDelegate.swift */,
+				5C15698E1B2DD0F7006E0641 /* Main.storyboard */,
+				5C54FAEF1B3987A5009233B1 /* AppInitViewController.swift */,
 				5C1569AC1B2E1CFD006E0641 /* LogInViewController.swift */,
 				5C1569DC1B326A97006E0641 /* PasscodeRecoveryViewController.swift */,
-				5C15698A1B2DD0F7006E0641 /* FirstViewController.swift */,
-				5C15698C1B2DD0F7006E0641 /* SecondViewController.swift */,
-				5C1569AA1B2DD220006E0641 /* ThirdViewController.swift */,
-				5C15698E1B2DD0F7006E0641 /* Main.storyboard */,
+				5C15698C1B2DD0F7006E0641 /* DayCounterViewController.swift */,
+				5C54FAE51B366C25009233B1 /* DayCounterChipsViewController.swift */,
+				5C54FAE31B366BE6009233B1 /* DayCounterDashboardViewController.swift */,
+				5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */,
+				5C15698A1B2DD0F7006E0641 /* MeetingFinderViewController.swift */,
+				5C54FAEB1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift */,
+				5C54FAED1B368252009233B1 /* MeetingFinderDashboardViewController.swift */,
+				5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */,
+				5C1569AA1B2DD220006E0641 /* SupportViewController.swift */,
+				5C54FAE71B367248009233B1 /* SupportFellowsViewController.swift */,
+				5C54FAE91B36734B009233B1 /* SupportContactsViewController.swift */,
+				5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */,
+				5C54FAE11B361674009233B1 /* MasterSettingsViewController.swift */,
 				5C1569911B2DD0F7006E0641 /* Images.xcassets */,
 				5C1569931B2DD0F7006E0641 /* LaunchScreen.xib */,
 				5C1569861B2DD0F7006E0641 /* Supporting Files */,
@@ -224,12 +257,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C15698D1B2DD0F7006E0641 /* SecondViewController.swift in Sources */,
+				5C54FAE41B366BE6009233B1 /* DayCounterDashboardViewController.swift in Sources */,
+				5C15698D1B2DD0F7006E0641 /* DayCounterViewController.swift in Sources */,
 				5C1569DD1B326A97006E0641 /* PasscodeRecoveryViewController.swift in Sources */,
+				5C54FAF01B3987A6009233B1 /* AppInitViewController.swift in Sources */,
+				5C54FAE01B350BCC009233B1 /* DayCounterSettingsViewController.swift in Sources */,
+				5C54FAE21B361674009233B1 /* MasterSettingsViewController.swift in Sources */,
 				5C1569891B2DD0F7006E0641 /* AppDelegate.swift in Sources */,
-				5C1569AB1B2DD220006E0641 /* ThirdViewController.swift in Sources */,
+				5C54FAE81B367248009233B1 /* SupportFellowsViewController.swift in Sources */,
+				5C1569AB1B2DD220006E0641 /* SupportViewController.swift in Sources */,
 				5C1569AD1B2E1CFD006E0641 /* LogInViewController.swift in Sources */,
-				5C15698B1B2DD0F7006E0641 /* FirstViewController.swift in Sources */,
+				5C54FAEC1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift in Sources */,
+				5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */,
+				5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */,
+				5C54FAEA1B36734B009233B1 /* SupportContactsViewController.swift in Sources */,
+				5C54FAEE1B368252009233B1 /* MeetingFinderDashboardViewController.swift in Sources */,
+				5C15698B1B2DD0F7006E0641 /* MeetingFinderViewController.swift in Sources */,
+				5C54FAE61B366C25009233B1 /* DayCounterChipsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

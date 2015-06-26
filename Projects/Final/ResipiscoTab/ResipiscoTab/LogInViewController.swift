@@ -10,11 +10,20 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    var appInit:Int = 0
+    
+    var x:String = ""
+    var y:String = ""
+    var z:String = ""
+    var pause:Bool = false
     var attempts:Int = 0
     var pinCode:String = ""
     
-    @IBOutlet weak var pinCodeFromMemory: UILabel!
+    var dataPassed:String!
+    
     @IBOutlet weak var hiddenCodeField: UITextField!
+    
+    @IBOutlet weak var welcomeButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
@@ -34,31 +43,34 @@ class LogInViewController: UIViewController {
         //set button
         let buttonText:String = sender.titleLabel!.text!
         
-        if(buttonText != "<") {
-            if(self.pinCode == "") {
-                self.pinCode = buttonText
-                self.deleteButton.hidden = false
-            }
-            else {
-                if(count(self.pinCode) < 4) {
-                    self.appendNewDigit(buttonText)
+        if(self.pause == false) {
+            if(buttonText != "<") {
+                if(self.pinCode == "") {
+                    self.pinCode = buttonText
+                    self.deleteButton.hidden = false
+                }
+                else {
+                    if(count(self.pinCode) < 4) {
+                        self.appendNewDigit(buttonText)
+                    }
                 }
             }
+            else {
+                if(count(self.pinCode) == 1) {
+                    self.dot_1.image = emptyDot
+                    self.deleteButton.hidden = true
+                }
+                else if(count(self.pinCode) == 2) {
+                    self.dot_2.image = emptyDot
+                }
+                else if(count(self.pinCode) == 3) {
+                    self.dot_3.image = emptyDot
+                }
+                self.pinCode = self.pinCode.substringToIndex(self.pinCode.endIndex.predecessor())
+                
+            }
         }
-        else {
-            if(count(self.pinCode) == 1) {
-                self.dot_1.image = emptyDot
-                self.deleteButton.hidden = true
-            }
-            else if(count(self.pinCode) == 2) {
-                self.dot_2.image = emptyDot
-            }
-            else if(count(self.pinCode) == 3) {
-                self.dot_3.image = emptyDot
-            }
-            self.pinCode = self.pinCode.substringToIndex(self.pinCode.endIndex.predecessor())
 
-        }
         
         if(count(self.pinCode) == 1) {
             self.dot_1.image = fullDot
@@ -73,7 +85,7 @@ class LogInViewController: UIViewController {
             
             self.dot_4.image = fullDot
             
-            if(self.pinCode == self.pinCodeFromMemory.text!) {
+            if(self.pinCode == self.x) {
                 var delay = 0.25 * Double(NSEC_PER_SEC)
                 var time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
                 dispatch_after(time, dispatch_get_main_queue(), {
@@ -82,6 +94,7 @@ class LogInViewController: UIViewController {
             }
             else {
                 self.attempts++
+                self.pause = true
                 self.pinCode = ""
                 self.deleteButton.hidden = true
                 self.titleLabel.text! = "The pin you entered is not correct"
@@ -115,11 +128,12 @@ class LogInViewController: UIViewController {
                     self.dot_3.image = emptyDot
                     self.dot_4.image = emptyDot
                     self.titleLabel.text! = "Enter Passcode"
+                    self.pause = false
                 })
             }
         }
         
-        if(self.attempts >= 3) {
+        if(self.attempts >= 1) {
             self.forgotPasscodeButton.hidden = false
         }
         
@@ -138,6 +152,7 @@ class LogInViewController: UIViewController {
         self.tabBarController?.tabBar.hidden = true
     }
 
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,13 +163,32 @@ class LogInViewController: UIViewController {
 
         self.loadFromDefaults()
         
-        if(self.pinCodeFromMemory.text! == "") {
-            //loads center tab on app init
+        if(self.z == "0") {
+        
+            if((self.x == "") || (self.y == "1")) {
+                //clear recovered value from defaultsMgr
+                self.defaultsMgr.setValue("0", forKey:"recovered")
+                //loads center tab on app init
+                self.tabBarController?.selectedIndex = 2
+            }
+        }
+        else if(self.z == "initiated") {
+            self.defaultsMgr.setValue("0", forKey:"appInit")
             self.tabBarController?.selectedIndex = 2
         }
- 
-
-        
+        else {
+            //self.welcomeButton.hidden = false
+            println(self.z)
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.performSegueWithIdentifier("AppInitView", sender: self)
+//            }
+            let alertController = UIAlertController(title: "Congratulations", message:
+                "You are on your way! Just a few bits of information before you get started", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default,handler: { action in self.performSegueWithIdentifier("AppInitView", sender: self) }))
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
@@ -167,11 +201,20 @@ class LogInViewController: UIViewController {
     func loadFromDefaults() {
         
         if let pinCodeValue = self.defaultsMgr.valueForKey("pinCode") as? String {
-            self.pinCodeFromMemory.text! = pinCodeValue
+            self.x = pinCodeValue
         }
         
+        if let pinCodeRecovered = self.defaultsMgr.valueForKey("recovered") as? String {
+            self.y = pinCodeRecovered
+        }
+        
+        if let welcomeView = self.defaultsMgr.valueForKey("appInit") as? String {
+            self.z = welcomeView
+        }
         
     }
+    
+
     
     /*
     // MARK: - Navigation

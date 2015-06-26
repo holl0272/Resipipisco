@@ -10,52 +10,31 @@ import UIKit
 
 class PasscodeRecoveryViewController: UIViewController {
     
-    let soberDate:String = "8/26/14"
+    var soberDate:String = ""
     
     var scrollDate:String = ""
-
+    
     @IBOutlet weak var myDatePicker: UIDatePicker!
+    
     @IBAction func myDateView(sender: UIDatePicker) {
         self.scrollDate = printDate(sender.date)
-        
-        println(self.scrollDate)
     }
+    
+    let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
     @IBAction func submitButton(sender: UIButton) {
-        if(self.scrollDate == self.soberDate) {
-            
-        }
-        else {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        self.defaultsMgr.setValue("1", forKey:"recovered")
+        self.performSegueWithIdentifier("passCodeRecovery", sender:self)
     }
     
-
-        override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if identifier == "segueTest" {
-            
-            if(self.scrollDate != self.soberDate) {
-                
-                let alertController = UIAlertController(title: "Your Dog Has No Name?!", message:
-                    "Oops, looks like you forgot your Dog's name, type it in and try again!", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-                
-                return false
-            }
-                
-            else {
-                return true
-            }
-        }
-        
-        // by default, transition
-        return true
+    @IBAction func cancelButton(sender: UIButton) {
+        self.performSegueWithIdentifier("passCodeRecovery", sender:self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.soberDate = loadFromDefaults()
 
         // Do any additional setup after loading the view.
         myDatePicker.datePickerMode = UIDatePickerMode.Date
@@ -78,7 +57,32 @@ class PasscodeRecoveryViewController: UIViewController {
         
         return dateFormatter.stringFromDate(date)
         
-        //println(dateFormatter.stringFromDate(date))
+    }
+    
+    func loadFromDefaults() -> String {
+        var soberDateString:String = ""
+        if let savedDate = self.defaultsMgr.valueForKey("soberDate") as? String {
+            soberDateString = savedDate
+        }
+        return soberDateString
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject?) -> Bool {
+                if (identifier == "passCodeRecovery") {
+                    if(self.scrollDate != self.soberDate) {
+                        let alertController = UIAlertController(title: "Recovery Reminder", message:
+                            "Select the recovery date you entered when setting up your profile", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default,handler: nil))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        return false
+                    }
+                    else {
+                     return true
+                    }
+        
+                }
+        return true
     }
 
     /*
