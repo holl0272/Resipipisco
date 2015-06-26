@@ -165,7 +165,8 @@
             <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Lessons/Lesson%2015">
                 15 - Files and Persistence 1
             </a><br>
-            <em>Midterm due</em>
+            <em>Midterm due</em><br>
+            <em>Assessment 05 assigned</em>
         </td>
         <td><strong>2015 06 11</strong><br>
             16 - Files and Persistence 2
@@ -175,8 +176,13 @@
     <tr>
         <td><strong>Wk 9</strong></td>
         <td></td>
-        <td><strong>2015 06 16</strong><br>18 - Networking 1</td>
-        <td><strong>2015 06 18</strong><br>19 - Networking 2</td>
+        <td><strong>2015 06 16</strong><br>
+            18 - Networking 1<br>
+            <em>Assessment 06 assigned</em>
+        </td>
+        <td><strong>2015 06 18</strong><br>
+            19 - Networking 2
+        </td>
     </tr>
     
     <tr>
@@ -212,7 +218,7 @@ Work for the class consists of in-class exercises, "homework" assignments, and t
 <table>
     <thead>
         <tr>
-            <th>Week</th>
+            <th>#</th>
             <th>Assignment</th>
         </tr>
     </thead>
@@ -246,13 +252,23 @@ Work for the class consists of in-class exercises, "homework" assignments, and t
         </tr>
         
         <tr>
-            <td>&nbsp;</td>
+            <td>04</td>
             <td>Create a Todo List App</td>
         </tr>
         
         <tr>
-            <td>&nbsp;</td>
-            <td>Auto Layout exercise</td>
+            <td>05</td>
+            <td>
+                <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Assessments_Challenges/Assessment%2005">Auto Layout exercise</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>06</td>
+            <td>
+                <a href="https://github.com/ga-students/MOB-NYC-3/tree/master/Assessments_Challenges/Assessment%2006">Networking Exercise</a><br>
+                Ignore the TODO regarding AFNetworking.
+            </td>
         </tr>
     </tbody>
 </table>
