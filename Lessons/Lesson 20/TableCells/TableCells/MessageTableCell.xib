@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="200" id="WLu-q9-1Kf" customClass="MessageCell" customModule="TableCells" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WLu-q9-1Kf" id="5NE-Sf-YQ0">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-bU-SIW">
+                        <rect key="frame" x="8" y="8" width="92" height="96"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="92" id="6Ol-JL-Iay"/>
+                            <constraint firstAttribute="height" constant="96" id="K31-HZ-DjZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeM-vu-Hly">
+                        <rect key="frame" x="123" y="8" width="200" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="0cO-5h-tKa"/>
+                            <constraint firstAttribute="height" constant="35" id="72C-ek-SXJ"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Ufs-68-ZzX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-2p-IWB">
+                        <rect key="frame" x="123" y="48" width="190" height="151"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hJz-2p-IWB" firstAttribute="top" secondItem="FeM-vu-Hly" secondAttribute="bottom" constant="5" id="3bs-TU-i9R"/>
+                    <constraint firstItem="FeM-vu-Hly" firstAttribute="leading" secondItem="VCo-bU-SIW" secondAttribute="trailing" constant="23" id="Bxu-cD-XdP"/>
+                    <constraint firstItem="VCo-bU-SIW" firstAttribute="top" secondItem="5NE-Sf-YQ0" secondAttribute="topMargin" id="NLO-kZ-Jn0"/>
+                    <constraint firstItem="hJz-2p-IWB" firstAttribute="leading" secondItem="FeM-vu-Hly" secondAttribute="leading" id="Zrx-4Q-Nsw"/>
+                    <constraint firstItem="FeM-vu-Hly" firstAttribute="top" secondItem="5NE-Sf-YQ0" secondAttribute="topMargin" id="aCJ-6x-9Zo"/>
+                    <constraint firstItem="hJz-2p-IWB" firstAttribute="trailing" secondItem="5NE-Sf-YQ0" secondAttribute="trailingMargin" id="aTW-0V-yRU"/>
+                    <constraint firstItem="VCo-bU-SIW" firstAttribute="leading" secondItem="5NE-Sf-YQ0" secondAttribute="leadingMargin" id="rnw-SO-v9a"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hJz-2p-IWB" secondAttribute="bottom" constant="-7.5" id="sAf-hm-Jp8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyText" destination="hJz-2p-IWB" id="g19-7I-vuH"/>
+                <outlet property="titleLabel" destination="FeM-vu-Hly" id="jHE-5E-bEI"/>
+            </connections>
+            <point key="canvasLocation" x="387.5" y="319"/>
+        </tableViewCell>
+    </objects>
+</document>

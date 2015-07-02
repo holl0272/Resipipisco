@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF28BAEC1B212AA80018AD46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28BAEB1B212AA80018AD46 /* AppDelegate.swift */; };
+		AF28BAEE1B212AA80018AD46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28BAED1B212AA80018AD46 /* ViewController.swift */; };
+		AF28BAF11B212AA80018AD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF28BAEF1B212AA80018AD46 /* Main.storyboard */; };
+		AF28BAF31B212AA80018AD46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF28BAF21B212AA80018AD46 /* Images.xcassets */; };
+		AF28BAF61B212AA80018AD46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF28BAF41B212AA80018AD46 /* LaunchScreen.xib */; };
+		AF28BB021B212AA80018AD46 /* BejeweledCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28BB011B212AA80018AD46 /* BejeweledCloneTests.swift */; };
+		AF28BB0C1B212CAF0018AD46 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28BB0B1B212CAF0018AD46 /* Board.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF28BAFC1B212AA80018AD46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF28BADE1B212AA80018AD46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF28BAE51B212AA80018AD46;
+			remoteInfo = BejeweledClone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF28BAE61B212AA80018AD46 /* BejeweledClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BejeweledClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF28BAEA1B212AA80018AD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF28BAEB1B212AA80018AD46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF28BAED1B212AA80018AD46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF28BAF01B212AA80018AD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF28BAF21B212AA80018AD46 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AF28BAF51B212AA80018AD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AF28BAFB1B212AA80018AD46 /* BejeweledCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BejeweledCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF28BB001B212AA80018AD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF28BB011B212AA80018AD46 /* BejeweledCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BejeweledCloneTests.swift; sourceTree = "<group>"; };
+		AF28BB0B1B212CAF0018AD46 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF28BAE31B212AA80018AD46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF28BAF81B212AA80018AD46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF28BADD1B212AA80018AD46 = {
+			isa = PBXGroup;
+			children = (
+				AF28BAE81B212AA80018AD46 /* BejeweledClone */,
+				AF28BAFE1B212AA80018AD46 /* BejeweledCloneTests */,
+				AF28BAE71B212AA80018AD46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF28BAE71B212AA80018AD46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF28BAE61B212AA80018AD46 /* BejeweledClone.app */,
+				AF28BAFB1B212AA80018AD46 /* BejeweledCloneTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF28BAE81B212AA80018AD46 /* BejeweledClone */ = {
+			isa = PBXGroup;
+			children = (
+				AF28BAEB1B212AA80018AD46 /* AppDelegate.swift */,
+				AF28BAED1B212AA80018AD46 /* ViewController.swift */,
+				AF28BAEF1B212AA80018AD46 /* Main.storyboard */,
+				AF28BAF21B212AA80018AD46 /* Images.xcassets */,
+				AF28BAF41B212AA80018AD46 /* LaunchScreen.xib */,
+				AF28BAE91B212AA80018AD46 /* Supporting Files */,
+				AF28BB0B1B212CAF0018AD46 /* Board.swift */,
+			);
+			path = BejeweledClone;
+			sourceTree = "<group>";
+		};
+		AF28BAE91B212AA80018AD46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF28BAEA1B212AA80018AD46 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF28BAFE1B212AA80018AD46 /* BejeweledCloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF28BB011B212AA80018AD46 /* BejeweledCloneTests.swift */,
+				AF28BAFF1B212AA80018AD46 /* Supporting Files */,
+			);
+			path = BejeweledCloneTests;
+			sourceTree = "<group>";
+		};
+		AF28BAFF1B212AA80018AD46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF28BB001B212AA80018AD46 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF28BAE51B212AA80018AD46 /* BejeweledClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF28BB051B212AA80018AD46 /* Build configuration list for PBXNativeTarget "BejeweledClone" */;
+			buildPhases = (
+				AF28BAE21B212AA80018AD46 /* Sources */,
+				AF28BAE31B212AA80018AD46 /* Frameworks */,
+				AF28BAE41B212AA80018AD46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BejeweledClone;
+			productName = BejeweledClone;
+			productReference = AF28BAE61B212AA80018AD46 /* BejeweledClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF28BAFA1B212AA80018AD46 /* BejeweledCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF28BB081B212AA80018AD46 /* Build configuration list for PBXNativeTarget "BejeweledCloneTests" */;
+			buildPhases = (
+				AF28BAF71B212AA80018AD46 /* Sources */,
+				AF28BAF81B212AA80018AD46 /* Frameworks */,
+				AF28BAF91B212AA80018AD46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF28BAFD1B212AA80018AD46 /* PBXTargetDependency */,
+			);
+			name = BejeweledCloneTests;
+			productName = BejeweledCloneTests;
+			productReference = AF28BAFB1B212AA80018AD46 /* BejeweledCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF28BADE1B212AA80018AD46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Anomalus;
+				TargetAttributes = {
+					AF28BAE51B212AA80018AD46 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					AF28BAFA1B212AA80018AD46 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = AF28BAE51B212AA80018AD46;
+					};
+				};
+			};
+			buildConfigurationList = AF28BAE11B212AA80018AD46 /* Build configuration list for PBXProject "BejeweledClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF28BADD1B212AA80018AD46;
+			productRefGroup = AF28BAE71B212AA80018AD46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF28BAE51B212AA80018AD46 /* BejeweledClone */,
+				AF28BAFA1B212AA80018AD46 /* BejeweledCloneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF28BAE41B212AA80018AD46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF28BAF11B212AA80018AD46 /* Main.storyboard in Resources */,
+				AF28BAF61B212AA80018AD46 /* LaunchScreen.xib in Resources */,
+				AF28BAF31B212AA80018AD46 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF28BAF91B212AA80018AD46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF28BAE21B212AA80018AD46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF28BAEE1B212AA80018AD46 /* ViewController.swift in Sources */,
+				AF28BAEC1B212AA80018AD46 /* AppDelegate.swift in Sources */,
+				AF28BB0C1B212CAF0018AD46 /* Board.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF28BAF71B212AA80018AD46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF28BB021B212AA80018AD46 /* BejeweledCloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF28BAFD1B212AA80018AD46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF28BAE51B212AA80018AD46 /* BejeweledClone */;
+			targetProxy = AF28BAFC1B212AA80018AD46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF28BAEF1B212AA80018AD46 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF28BAF01B212AA80018AD46 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF28BAF41B212AA80018AD46 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF28BAF51B212AA80018AD46 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF28BB031B212AA80018AD46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF28BB041B212AA80018AD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF28BB061B212AA80018AD46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BejeweledClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF28BB071B212AA80018AD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BejeweledClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF28BB091B212AA80018AD46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BejeweledCloneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BejeweledClone.app/BejeweledClone";
+			};
+			name = Debug;
+		};
+		AF28BB0A1B212AA80018AD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BejeweledCloneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BejeweledClone.app/BejeweledClone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF28BAE11B212AA80018AD46 /* Build configuration list for PBXProject "BejeweledClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF28BB031B212AA80018AD46 /* Debug */,
+				AF28BB041B212AA80018AD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF28BB051B212AA80018AD46 /* Build configuration list for PBXNativeTarget "BejeweledClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF28BB061B212AA80018AD46 /* Debug */,
+				AF28BB071B212AA80018AD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF28BB081B212AA80018AD46 /* Build configuration list for PBXNativeTarget "BejeweledCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF28BB091B212AA80018AD46 /* Debug */,
+				AF28BB0A1B212AA80018AD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF28BADE1B212AA80018AD46 /* Project object */;
+}
