@@ -16,11 +16,16 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
     var savedPasscode:String = ""
     var scrollDate:String = ""
 
+    @IBOutlet weak var yourNameLabel: UILabel!
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var savePasscode: UIButton!
     @IBOutlet weak var soberDate: UIDatePicker!
+    @IBOutlet weak var yourDateLabel: UILabel!
     @IBOutlet weak var passCodeField: UITextField!
     @IBOutlet weak var doNotLockButton: UIButton!
+    @IBOutlet weak var changeNameButton: UIButton!
+    @IBOutlet weak var saveNameButton: UIButton!
     
     @IBAction func doNotLock(sender: UIButton) {
         self.passCodeField.text! = ""
@@ -28,10 +33,42 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         self.defaultsMgr.setValue("", forKey:"pinCode")
     }
     
+    @IBAction func saveNameChange(sender: UIButton) {
+        
+        func noName(alert: UIAlertAction!) {
+            self.defaultsMgr.setValue("", forKey:"name")
+            self.yourNameLabel.text! = "Your Name"
+            self.changeNameButton.hidden = false
+            self.saveNameButton.hidden = true
+        }
+        
+        var name = self.nameField.text!
+        
+        if(name != "") {
+            self.defaultsMgr.setValue(name, forKey:"name")
+            self.yourNameLabel.text! = "\(name), your name has been updated!"
+            self.changeNameButton.hidden = false
+            self.saveNameButton.hidden = true
+        }
+        else {
+            let alertController = UIAlertController(title: "Personalization", message:
+                "Are you sure you want to remove your name?", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default,handler: noName))
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func changeName(sender: UIButton) {
+        self.nameField.text! = ""
+        self.changeNameButton.hidden = true
+    }
+    
     @IBAction func soberDatePicker(sender: UIDatePicker) {
         self.scrollDate = printDate(sender.date)
-        
         self.defaultsMgr.setValue(self.scrollDate, forKey:"soberDate")
+        self.yourDateLabel.text! = "Your Sobriety Date has been updated!"
     }
     
     @IBAction func savePasscode(sender: UIButton) {
@@ -42,6 +79,7 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func resetApp(alert: UIAlertAction!) {
+        self.defaultsMgr.setValue("", forKey:"name")
         self.defaultsMgr.setValue("", forKey:"appInit")
         self.defaultsMgr.setValue("", forKey:"pinCode")
         self.defaultsMgr.setValue("", forKey:"soberDate")
@@ -62,6 +100,9 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         self.passCodeField.delegate = self
+        self.nameField.delegate = self
+        
+        self.nameField.text! = loadNameFromDefaults()
         
         self.savedSoberDate = loadDateFromDefaults()
         self.savedPasscode = loadPasscodeFromDefaults()
@@ -88,19 +129,35 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let pinCodeLength = count(textField.text.utf16) - range.length
-
-        if(pinCodeLength <= 3) {
-            self.savePasscode.hidden = true
-            self.doNotLockButton.hidden = true
-            if(pinCodeLength == 3) {
-                self.savePasscode.hidden = false
+        if(textField.tag == 0) {
+            self.changeNameButton.hidden = true
+            let nameLength = count(textField.text.utf16) - range.length
+            if(nameLength > 0) {
+                self.saveNameButton.hidden = false
             }
             return true
         }
-        else {
-            return false
+        else if(textField.tag == 1) {
+        
+        let pinCodeLength = count(textField.text.utf16) - range.length
+
+
+            if(pinCodeLength <= 3) {
+                self.savePasscode.hidden = true
+                self.doNotLockButton.hidden = true
+                if(pinCodeLength == 3) {
+                    self.savePasscode.hidden = false
+                }
+                return true
+            }
+            else {
+                return false
+            }
         }
+        else {
+            return true
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,6 +176,14 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func loadNameFromDefaults() -> String {
+        var nameString:String = ""
+        if let savedName = self.defaultsMgr.valueForKey("name") as? String {
+            nameString = savedName
+        }
+        return nameString
+    }
+    
     func loadDateFromDefaults() -> String {
         var soberDateString:String = ""
         if let savedDate = self.defaultsMgr.valueForKey("soberDate") as? String {
@@ -135,14 +200,16 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         return pinCodeString
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        self.yourNameLabel.text! = "Your Name"
+        self.yourDateLabel.text! = "Your Sobriety Date"
+        
     }
-    */
+
 
 }

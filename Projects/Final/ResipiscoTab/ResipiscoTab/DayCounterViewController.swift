@@ -73,6 +73,22 @@ class DayCounterViewController: UIViewController {
         return pinCodeString
     }
     
+    override func prepareForSegue(segue:
+        UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        firstContainerView.hidden = true
+        secondContainerView.hidden = false
+        thirdContainerView.hidden = true
+            
+        segmentedControl.selectedSegmentIndex = 1
+        
+    }
+    
+    
+    
+    
+    
 //    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
 //        if identifier == "Identifier Of Segue Under Scrutiny" {
 //            // perform your computation to determine whether segue should occur
