@@ -31,6 +31,7 @@
 		5CC88B191B48E4C600814E08 /* SupportContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC88B181B48E4C600814E08 /* SupportContactsViewController.swift */; };
 		5CC88B1B1B48E8CD00814E08 /* ViewContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC88B1A1B48E8CD00814E08 /* ViewContactsViewController.swift */; };
 		5CC88B1D1B48EBF500814E08 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC88B1C1B48EBF500814E08 /* ContactsViewController.swift */; };
+		5CC88B1F1B48FA7700814E08 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC88B1E1B48FA7700814E08 /* ContactInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5CC88B181B48E4C600814E08 /* SupportContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportContactsViewController.swift; sourceTree = "<group>"; };
 		5CC88B1A1B48E8CD00814E08 /* ViewContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewContactsViewController.swift; sourceTree = "<group>"; };
 		5CC88B1C1B48EBF500814E08 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		5CC88B1E1B48FA7700814E08 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				5CC88B0C1B477BBD00814E08 /* DataManager.swift */,
 				5CC88B1A1B48E8CD00814E08 /* ViewContactsViewController.swift */,
 				5CC88B1C1B48EBF500814E08 /* ContactsViewController.swift */,
+				5CC88B1E1B48FA7700814E08 /* ContactInfoViewController.swift */,
 			);
 			path = ResipiscoTab;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */,
 				5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */,
 				5C54FAEE1B368252009233B1 /* MeetingFinderDashboardViewController.swift in Sources */,
+				5CC88B1F1B48FA7700814E08 /* ContactInfoViewController.swift in Sources */,
 				5CC88B1B1B48E8CD00814E08 /* ViewContactsViewController.swift in Sources */,
 				5C15698B1B2DD0F7006E0641 /* MeetingFinderViewController.swift in Sources */,
 				5C54FAE61B366C25009233B1 /* DayCounterChipsViewController.swift in Sources */,

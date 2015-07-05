@@ -1740,7 +1740,7 @@
             </objects>
             <point key="canvasLocation" x="1085" y="2196"/>
         </scene>
-        <!--Contacts View Controller-->
+        <!--Title-->
         <scene sceneID="21t-se-EIb">
             <objects>
                 <viewController storyboardIdentifier="ContactsViewController" id="hcD-EE-VfV" customClass="ContactsViewController" customModule="ResipiscoTab" customModuleProvider="target" sceneMemberID="viewController">
@@ -1757,6 +1757,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="hcD-EE-VfV" id="SH9-qi-PfD"/>
+                                    <outlet property="delegate" destination="hcD-EE-VfV" id="6W6-Ge-BDu"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1768,13 +1769,50 @@
                             <constraint firstAttribute="width" secondItem="dmD-yu-SeY" secondAttribute="width" id="VB9-KS-LeH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="kCI-gZ-sm2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n4e-qi-aBD">
+                            <connections>
+                                <action selector="didTapAdd:" destination="hcD-EE-VfV" id="7OC-Aa-Z06"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="dmD-yu-SeY" id="nkK-tw-7im"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi6-Lx-5dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="2260"/>
+            <point key="canvasLocation" x="1085" y="2808"/>
+        </scene>
+        <!--Contact Info View Controller-->
+        <scene sceneID="GCu-AH-dmq">
+            <objects>
+                <viewController storyboardIdentifier="ContactInfoViewController" id="tPg-zX-Nix" customClass="ContactInfoViewController" customModule="ResipiscoTab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t1W-9z-3OV"/>
+                        <viewControllerLayoutGuide type="bottom" id="mBj-oN-dmC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mBH-uC-nxl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcS-Nk-NVx">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="pcS-Nk-NVx" id="qKM-pK-Ace"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpB-B1-BeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="2808"/>
         </scene>
         <!--Support Contacts View Controller-->
         <scene sceneID="5X7-AV-M4W">

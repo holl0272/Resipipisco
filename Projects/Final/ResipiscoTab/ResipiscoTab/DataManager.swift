@@ -36,6 +36,40 @@ class DataManager {
         return list
     }
     
+    func saveData() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setValue(contacts, forKey: "contacts")
+    }
+    
+    func addContactInfo(conatcts inContacts: String, info: String) {
+        if var contactInfo = contacts[inContacts] {
+            contactInfo.append(info)
+            contacts[inContacts] = contactInfo
+        }
+        
+        saveData()
+    }
+    
+    func removeRace(contacts inContacts: String, info inInfo: String) {
+        if var contactInfo = contacts[inContacts] {
+            var index = -1
+            
+            for (idx, info) in enumerate(contactInfo) {
+                if info == inInfo {
+                    index = idx
+                    break
+                }
+            }
+            
+            if index != -1 {
+                contactInfo.removeAtIndex(index)
+                contacts[inContacts] = contactInfo
+                saveData()
+            }
+            
+        }
+    }
+    
     struct Static {
         static var onceToken : dispatch_once_t = 0
         static var instance : DataManager? = nil
