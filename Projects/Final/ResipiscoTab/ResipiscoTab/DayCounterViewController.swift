@@ -19,7 +19,7 @@ class DayCounterViewController: UIViewController {
     @IBOutlet weak var firstContainerView: UIView!
     @IBOutlet weak var secondContainerView: UIView!
     @IBOutlet weak var thirdContainerView: UIView!
-    
+        
     @IBAction func indexChanged(sender: UISegmentedControl) {
         
         switch segmentedControl.selectedSegmentIndex {
@@ -45,7 +45,6 @@ class DayCounterViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         firstContainerView.hidden = true
         thirdContainerView.hidden = true
-        
     }
     
     

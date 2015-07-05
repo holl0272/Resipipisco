@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DayCounterChipsViewController: UIViewController {
     
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
@@ -58,7 +59,7 @@ class DayCounterChipsViewController: UIViewController {
         if let savedDate = self.defaultsMgr.valueForKey("soberDate") as? String {
             self.sobrietyDate = savedDate
         }
-        
+                
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
         
@@ -266,8 +267,9 @@ class DayCounterChipsViewController: UIViewController {
             println("currentDate before 2yrs sober");
             self._2yr_chip.hidden = true
             self.bw_2yr_chip.hidden = false
-            
+            println(in_2yrs)
             var days_to_2yrs = diffDays(in_2yrs)
+            println(days_to_2yrs)
             self._2yr_label.text! = "In \(days_to_2yrs) days!"
         }
         else {
@@ -299,14 +301,13 @@ class DayCounterChipsViewController: UIViewController {
     func diffDays(date: NSDate) -> Int {
         let cal = NSCalendar.currentCalendar()
         let today = cal.startOfDayForDate(NSDate())
-        let dayAndMonth = cal.components(.CalendarUnitDay | .CalendarUnitMonth, fromDate: date)
-        let nextBirthDay = cal.nextDateAfterDate(today, matchingComponents: dayAndMonth, options: .MatchNextTimePreservingSmallerUnits)!
+        let dayAndMonth = cal.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: date)
+        let nextChip = cal.nextDateAfterDate(today, matchingComponents: dayAndMonth, options: .MatchNextTimePreservingSmallerUnits)!
         
-        var diff = cal.components(.CalendarUnitDay, fromDate: today, toDate: nextBirthDay, options: nil)
+        var diff = cal.components(.CalendarUnitDay, fromDate: today, toDate: nextChip, options: nil)
         
         return diff.day
     }
-    
     
     /*
     // MARK: - Navigation

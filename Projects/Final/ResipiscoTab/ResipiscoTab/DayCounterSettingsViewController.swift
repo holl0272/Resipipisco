@@ -8,7 +8,23 @@
 
 import UIKit
 
+class TextFieldDelegate : UIResponder, UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+}
+
 class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
+    }
     
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
@@ -106,6 +122,10 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         
         self.savedSoberDate = loadDateFromDefaults()
         self.savedPasscode = loadPasscodeFromDefaults()
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
 
         // Do any additional setup after loading the view.
         soberDate.datePickerMode = UIDatePickerMode.Date
@@ -140,7 +160,6 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         else if(textField.tag == 1) {
         
         let pinCodeLength = count(textField.text.utf16) - range.length
-
 
             if(pinCodeLength <= 3) {
                 self.savePasscode.hidden = true
