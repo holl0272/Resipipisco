@@ -8,41 +8,134 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
+
+class NameTextFieldDelegate : UIResponder, UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+}
+
+class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
     
     var contacts: String!
+    
+    var nameTextField: UITextField?;
+    var codeTextField: UITextField?;
+    var numberTextField: UITextField?;
 
     @IBOutlet var tableView: UITableView!
     
     @IBAction func didTapAdd(sender: UIBarButtonItem) {
-        var alert = UIAlertView(title: "New Contact", message: "Type in their name", delegate: self,
-            cancelButtonTitle: "Cancel",
-            otherButtonTitles: "Add")
+
+        var title = "New Contact";
+        var message = "Enter Name and Number Below\n\n\n";
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert);
+        alert.modalInPopover = true;
         
-        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
+        func handleOk(alertView: UIAlertAction!){
+            
+            var name: String = self.nameTextField!.text;
+            var code: String = self.codeTextField!.text;
+            var number: String = self.numberTextField!.text;
+            var fullNumber: String = ""
+            
+            if((code != "") && (number != "")) {
+                fullNumber = "\(code)"+"\(number)"
+            }
+
+            if((name != "") && (fullNumber != "")) {
+                // get the new races and capitalize the string
+                var newContactName = name.capitalizedString
+                var newContactValue = "\(newContactName):\(fullNumber)"
+                
+                // add the new race in the list
+                DataManager.sharedInstance.addContactInfo(conatcts: contacts, info: newContactValue)
+                
+                // create the index path for the last cell
+                var newIndexPath = NSIndexPath(forRow: contactInfo.count - 1, inSection: 0)
+                
+                // insert the new cell in the table view and show an animation
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+        }
         
-        alert.show()
+        var phoneFrame = CGRectMake(0, 70, 270, 75);
+        var inputView: UIView = UIView(frame: phoneFrame);
+        
+        var nameFrame = CGRectMake(20, 30, 240, 25);
+        var myNameTextField: UITextField = UITextField(frame: nameFrame);
+        myNameTextField.placeholder = "Name";
+        myNameTextField.textAlignment = NSTextAlignment.Center;
+        myNameTextField.borderStyle = UITextBorderStyle.RoundedRect;
+        myNameTextField.keyboardType = UIKeyboardType.Default;
+        myNameTextField.autocorrectionType = UITextAutocorrectionType.No
+        myNameTextField.returnKeyType = UIReturnKeyType.Done
+        
+        var codeFrame = CGRectMake(20, 0, 65, 25);
+        var zipCodeTextField: UITextField = UITextField(frame: codeFrame);
+        zipCodeTextField.tag = 1;
+        zipCodeTextField.placeholder = "Zip";
+        zipCodeTextField.textAlignment = NSTextAlignment.Center;
+        zipCodeTextField.borderStyle = UITextBorderStyle.RoundedRect;
+        zipCodeTextField.keyboardType = UIKeyboardType.PhonePad;
+        
+        var numberFrame = CGRectMake(90, 0, 170, 25);
+        var myNumberTextField: UITextField = UITextField(frame: numberFrame);
+        myNumberTextField.tag = 2;
+        myNumberTextField.placeholder = "Number (digits only)";
+        myNumberTextField.textAlignment = NSTextAlignment.Center;
+        myNumberTextField.borderStyle = UITextBorderStyle.RoundedRect;
+        myNumberTextField.keyboardType = UIKeyboardType.PhonePad;
+        
+        self.nameTextField = myNameTextField;
+        self.codeTextField = zipCodeTextField;
+        self.numberTextField = myNumberTextField;
+        
+        inputView.addSubview(self.nameTextField!);
+        inputView.addSubview(self.codeTextField!);
+        inputView.addSubview(self.numberTextField!);
+        
+        alert.view.addSubview(inputView);
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil));
+        alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler:handleOk));
+        
+        self.presentViewController(alert, animated: true, completion: nil);
+        
+        self.codeTextField!.delegate = self
+        self.numberTextField!.delegate = self
     }
     
-    func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            // there is only one text field
-            var textField = alertView.textFieldAtIndex(0)!
-            
-            // get the new races and capitalize the string
-            var newContact = textField.text.capitalizedString
-            
-            // add the new race in the list
-            DataManager.sharedInstance.addContactInfo(conatcts: contacts, info: newContact)
-            
-            // create the index path for the last cell
-            var newIndexPath = NSIndexPath(forRow: contactInfo.count - 1, inSection: 0)
-            
-            // insert the new cell in the table view and show an animation
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if(textField.tag == 1) {
+            let zipCodeLength = count(textField.text.utf16) - range.length
+            if(zipCodeLength < 3) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else if(textField.tag == 2) {
+            let zipCodeLength = count(textField.text.utf16) - range.length
+            if(zipCodeLength < 7) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return true
         }
     }
-    
+        
     var contactInfo: [String] {
         return DataManager.sharedInstance.contacts[contacts]!
     }
@@ -54,7 +147,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         title = contacts
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +162,11 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        cell.textLabel!.text = contactInfo[indexPath.row]
+        var delimiter = ":"
+        var fullString = contactInfo[indexPath.row]
+        var name = fullString.componentsSeparatedByString(delimiter)
+        
+        cell.textLabel!.text = name[0]
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell

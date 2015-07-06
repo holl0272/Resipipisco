@@ -18,9 +18,9 @@ class DataManager {
         } else {
             // add default data
             contacts = [
-                "Birds": ["Swift"],
-                "Cats" : ["Persian Cat"],
-                "Dogs" : ["Labrador Retriever"]
+                "Meetings": ["Eric:6127030272"],
+                "Fellowship" : [],
+                "Other" : []
             ]
         }
     }

@@ -12,7 +12,6 @@ class SupportViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var firstContainerView: UIView!
     @IBOutlet weak var secondContainerView: UIView!
     @IBOutlet weak var thirdContainerView: UIView!
     
@@ -20,15 +19,13 @@ class SupportViewController: UIViewController {
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            firstContainerView.hidden = false
+            performSegueWithIdentifier("contactsTable", sender: self)
             secondContainerView.hidden = true
             thirdContainerView.hidden = true
         case 1:
-            firstContainerView.hidden = true
             secondContainerView.hidden = false
             thirdContainerView.hidden = true
         case 2:
-            firstContainerView.hidden = true
             secondContainerView.hidden = true
             thirdContainerView.hidden = false
         default:
@@ -39,7 +36,6 @@ class SupportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        firstContainerView.hidden = true
         thirdContainerView.hidden = true
     }
 
@@ -48,7 +44,19 @@ class SupportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(animated: Bool)
+    {
+        self.navigationController?.navigationBarHidden = true
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
+    @IBAction func backFromModal(segue: UIStoryboardSegue) {
+        self.tabBarController?.selectedIndex = 3
+        segmentedControl.selectedSegmentIndex = 1
+        secondContainerView.hidden = false
+        thirdContainerView.hidden = true
+    }
+    
     /*
     // MARK: - Navigation
 

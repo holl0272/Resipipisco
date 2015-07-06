@@ -795,10 +795,10 @@
             </objects>
             <point key="canvasLocation" x="998" y="-46"/>
         </scene>
-        <!--Fellows-->
+        <!--Contacts-->
         <scene sceneID="QWC-RO-PQq">
             <objects>
-                <viewController id="A5z-0g-wab" customClass="SupportViewController" customModule="ResipiscoTab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SupportViewController" id="A5z-0g-wab" customClass="SupportViewController" customModule="ResipiscoTab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tr6-Dm-W2h"/>
                         <viewControllerLayoutGuide type="bottom" id="pwv-0B-Vmi"/>
@@ -827,12 +827,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-eK-Z6Z" userLabel="firstContainerView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="472"/>
-                                <connections>
-                                    <segue destination="ons-yM-9IJ" kind="embed" id="iRk-KM-Y9g"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7g-hU-D90" userLabel="secondContainerView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="472"/>
                                 <connections>
@@ -849,36 +843,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="J7g-hU-D90" secondAttribute="centerX" id="6Hs-gs-Dii"/>
-                            <constraint firstItem="K0t-eK-Z6Z" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pwv-0B-Vmi" secondAttribute="top" id="9Sm-ZH-n3l"/>
                             <constraint firstItem="FIj-ma-V4w" firstAttribute="top" secondItem="vKy-QZ-6V6" secondAttribute="bottom" id="B5S-40-EXP"/>
                             <constraint firstAttribute="centerY" secondItem="J7g-hU-D90" secondAttribute="centerY" id="BRl-Hy-XVp"/>
                             <constraint firstAttribute="centerY" secondItem="FIj-ma-V4w" secondAttribute="centerY" id="EQz-NK-9wI"/>
                             <constraint firstItem="vKy-QZ-6V6" firstAttribute="width" secondItem="FIj-ma-V4w" secondAttribute="width" id="IaV-of-11A"/>
                             <constraint firstItem="J7g-hU-D90" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pwv-0B-Vmi" secondAttribute="top" id="JBv-E2-Bxv"/>
                             <constraint firstAttribute="centerX" secondItem="vKy-QZ-6V6" secondAttribute="centerX" id="MbL-jO-cEB"/>
-                            <constraint firstAttribute="centerX" secondItem="K0t-eK-Z6Z" secondAttribute="centerX" id="MjB-kC-94c"/>
                             <constraint firstItem="tr6-Dm-W2h" firstAttribute="bottom" secondItem="vKy-QZ-6V6" secondAttribute="top" id="ORU-36-bhp"/>
                             <constraint firstAttribute="centerX" secondItem="FIj-ma-V4w" secondAttribute="centerX" id="PeI-mQ-DK0"/>
                             <constraint firstItem="vKy-QZ-6V6" firstAttribute="width" secondItem="BvS-pD-L4u" secondAttribute="width" id="QuJ-mE-47v"/>
-                            <constraint firstAttribute="centerY" secondItem="K0t-eK-Z6Z" secondAttribute="centerY" id="U6f-Nr-lip"/>
-                            <constraint firstItem="vKy-QZ-6V6" firstAttribute="width" secondItem="K0t-eK-Z6Z" secondAttribute="width" id="a8y-vr-D21"/>
                             <constraint firstItem="vKy-QZ-6V6" firstAttribute="width" secondItem="J7g-hU-D90" secondAttribute="width" id="iQl-BS-hc1"/>
-                            <constraint firstItem="K0t-eK-Z6Z" firstAttribute="top" secondItem="vKy-QZ-6V6" secondAttribute="bottom" id="pWg-iy-2Fw"/>
                             <constraint firstItem="J7g-hU-D90" firstAttribute="top" secondItem="vKy-QZ-6V6" secondAttribute="bottom" id="ufn-Pu-eXK"/>
                             <constraint firstItem="FIj-ma-V4w" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pwv-0B-Vmi" secondAttribute="top" id="xvy-9N-TP3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fellows" image="fellows" id="eFi-p5-YnI"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="fellows" id="eFi-p5-YnI"/>
                     <connections>
-                        <outlet property="firstContainerView" destination="K0t-eK-Z6Z" id="FjT-zX-fDB"/>
                         <outlet property="secondContainerView" destination="J7g-hU-D90" id="qkI-cV-xs3"/>
                         <outlet property="segmentedControl" destination="6Fk-U2-ZqP" id="Suh-l6-TzC"/>
                         <outlet property="thirdContainerView" destination="FIj-ma-V4w" id="alb-N8-KQx"/>
+                        <segue destination="tOP-sW-IhV" kind="show" identifier="contactsTable" id="xkD-9E-h93"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijq-hH-ipH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="816"/>
+            <point key="canvasLocation" x="1093" y="811"/>
         </scene>
         <!--Day Counter-->
         <scene sceneID="wg7-f3-ORb">
@@ -1669,7 +1658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dX1-Uq-4vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="1584"/>
+            <point key="canvasLocation" x="1781" y="1584"/>
         </scene>
         <!--Support Fellows View Controller-->
         <scene sceneID="R5N-yK-4Ic">
@@ -1700,7 +1689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8H-ou-shK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="1584"/>
+            <point key="canvasLocation" x="1093" y="1584"/>
         </scene>
         <!--View Contacts View Controller-->
         <scene sceneID="UzQ-DO-kQe">
@@ -1711,11 +1700,11 @@
                         <viewControllerLayoutGuide type="bottom" id="K9s-ez-C0D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gRh-Xs-73j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iuG-Ch-Tgv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="SqH-FF-j4Q" id="Byr-8k-xPE"/>
@@ -1731,14 +1720,22 @@
                             <constraint firstAttribute="centerY" secondItem="iuG-Ch-Tgv" secondAttribute="centerY" id="r1K-r9-YG3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="H2I-7w-8qG"/>
+                    <navigationItem key="navigationItem" id="H2I-7w-8qG">
+                        <barButtonItem key="leftBarButtonItem" image="left_arrow" id="hVP-Wc-OLS">
+                            <connections>
+                                <action selector="returnToSuportViewController:" destination="SqH-FF-j4Q" id="QpU-do-aiF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iuG-Ch-Tgv" id="joB-ty-u3b"/>
+                        <segue destination="Sjq-Iu-BzS" kind="unwind" identifier="returnFromModal" unwindAction="backFromModal:" id="Ciu-xy-knH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21I-gn-SRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Sjq-Iu-BzS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="2196"/>
+            <point key="canvasLocation" x="384" y="2405"/>
         </scene>
         <!--Title-->
         <scene sceneID="21t-se-EIb">
@@ -1783,7 +1780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi6-Lx-5dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="2808"/>
+            <point key="canvasLocation" x="1102" y="2405"/>
         </scene>
         <!--Contact Info View Controller-->
         <scene sceneID="GCu-AH-dmq">
@@ -1797,52 +1794,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcS-Nk-NVx">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcS-Nk-NVx">
+                                <rect key="frame" x="0.0" y="120" width="600" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="infoLabel" destination="pcS-Nk-NVx" id="qKM-pK-Ace"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lpB-B1-BeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1738" y="2808"/>
-        </scene>
-        <!--Support Contacts View Controller-->
-        <scene sceneID="5X7-AV-M4W">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ons-yM-9IJ" customClass="SupportContactsViewController" customModule="ResipiscoTab" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g7o-hw-EXE"/>
-                        <viewControllerLayoutGuide type="bottom" id="fi7-ab-KNo"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="esf-kA-OwK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ck-gc-jrB">
-                                <rect key="frame" x="277" y="190" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-IZ-VZN">
+                                <rect key="frame" x="0.0" y="169" width="600" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-2E-1R3">
+                                <rect key="frame" x="250" y="282" width="100" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="vhx-LU-wLh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="CALL">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="tOP-sW-IhV" kind="show" id="JO9-nA-VTC"/>
+                                    <action selector="callButton:" destination="tPg-zX-Nix" eventType="touchUpInside" id="umW-OZ-cNd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="pcS-Nk-NVx" secondAttribute="centerX" id="FHN-ar-B6T"/>
+                            <constraint firstItem="pcS-Nk-NVx" firstAttribute="width" secondItem="mBH-uC-nxl" secondAttribute="width" id="JZX-Xo-TW2"/>
+                            <constraint firstAttribute="centerX" secondItem="ii7-2E-1R3" secondAttribute="centerX" id="SuV-P0-FhA"/>
+                            <constraint firstAttribute="centerY" secondItem="ii7-2E-1R3" secondAttribute="centerY" id="Svf-zl-XhA"/>
+                            <constraint firstAttribute="centerX" secondItem="s6d-IZ-VZN" secondAttribute="centerX" id="VY5-6m-Sbu"/>
+                            <constraint firstItem="s6d-IZ-VZN" firstAttribute="width" secondItem="mBH-uC-nxl" secondAttribute="width" id="YFe-HM-GNc"/>
+                            <constraint firstItem="pcS-Nk-NVx" firstAttribute="top" secondItem="t1W-9z-3OV" secondAttribute="bottom" constant="100" id="ccj-xt-la8"/>
+                            <constraint firstItem="s6d-IZ-VZN" firstAttribute="top" secondItem="pcS-Nk-NVx" secondAttribute="bottom" constant="25" id="rik-7l-2it"/>
+                        </constraints>
                     </view>
-                    <toolbarItems/>
+                    <connections>
+                        <outlet property="contactName" destination="pcS-Nk-NVx" id="ec2-fH-CH8"/>
+                        <outlet property="contactNumber" destination="s6d-IZ-VZN" id="HqE-Qb-076"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1gT-ad-A5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpB-B1-BeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="355" y="1584"/>
+            <point key="canvasLocation" x="1781" y="2405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUU-5N-3lO">
@@ -1858,7 +1862,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLI-br-ArH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="355" y="2196"/>
+            <point key="canvasLocation" x="384" y="1648"/>
         </scene>
         <!--Meeting Finder Settings View Controller-->
         <scene sceneID="SXa-pE-OHz">
@@ -1974,6 +1978,7 @@
         <image name="counter" width="25" height="25"/>
         <image name="empty_dot" width="62" height="63"/>
         <image name="fellows" width="25" height="25"/>
+        <image name="left_arrow" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

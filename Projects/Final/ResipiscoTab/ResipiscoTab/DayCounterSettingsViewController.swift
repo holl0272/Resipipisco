@@ -99,6 +99,7 @@ class DayCounterSettingsViewController: UIViewController, UITextFieldDelegate {
         self.defaultsMgr.setValue("", forKey:"appInit")
         self.defaultsMgr.setValue("", forKey:"pinCode")
         self.defaultsMgr.setValue("", forKey:"soberDate")
+        self.defaultsMgr.setValue([[]], forKey:"contacts")
         self.performSegueWithIdentifier("resetApp", sender: self)
     }
 

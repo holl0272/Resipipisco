@@ -10,6 +10,10 @@ import UIKit
 
 class ViewContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBAction func returnToSuportViewController(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("returnFromModal", sender: self)
+    }
+    
     @IBOutlet var tableView: UITableView!
     
     var contacts: [String] = DataManager.sharedInstance.contactsList
@@ -50,7 +54,12 @@ class ViewContactsViewController: UIViewController, UITableViewDelegate, UITable
         
         navigationController?.pushViewController(contactsViewController, animated: true)
     }
-
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     /*
     // MARK: - Navigation
 
