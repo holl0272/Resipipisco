@@ -9,6 +9,8 @@
 import UIKit
 
 class SupportViewController: UIViewController {
+    
+    let defaultsMgr = NSUserDefaults.standardUserDefaults()
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -30,6 +32,19 @@ class SupportViewController: UIViewController {
             thirdContainerView.hidden = false
         default:
             break;
+        }
+        
+        if (secondContainerView.hidden == false) {
+            var sponsorPhoneNumber:String = loadSponsorFromDefaults()
+            var sponsorButtonStatus = loadShowSponsorFromDefaults()
+            if(sponsorButtonStatus == "1") {
+                secondContainerView.viewWithTag(1)?.hidden = false
+                var hiddenLabel = secondContainerView.viewWithTag(2) as? UILabel
+                hiddenLabel?.text! = sponsorPhoneNumber
+            }
+            else {
+                secondContainerView.viewWithTag(1)?.hidden = true
+            }
         }
     }
     
@@ -55,6 +70,22 @@ class SupportViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 1
         secondContainerView.hidden = false
         thirdContainerView.hidden = true
+    }
+    
+    func loadShowSponsorFromDefaults() -> String {
+        var sponsorSwitchState:String = ""
+        if let sponsorValue = self.defaultsMgr.valueForKey("showSponsor") as? String {
+            sponsorSwitchState = sponsorValue
+        }
+        return sponsorSwitchState
+    }
+    
+    func loadSponsorFromDefaults() -> String {
+        var sponsorNumberString:String = ""
+        if let sponsorNumber = self.defaultsMgr.valueForKey("sponsor") as? String {
+            sponsorNumberString = sponsorNumber
+        }
+        return sponsorNumberString
     }
     
     /*

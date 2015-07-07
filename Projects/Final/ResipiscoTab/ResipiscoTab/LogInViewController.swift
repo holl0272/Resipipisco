@@ -177,11 +177,7 @@ class LogInViewController: UIViewController {
             self.tabBarController?.selectedIndex = 2
         }
         else {
-            //self.welcomeButton.hidden = false
             println(self.z)
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.performSegueWithIdentifier("AppInitView", sender: self)
-//            }
             let alertController = UIAlertController(title: "Congratulations", message:
                 "You are on your way! Just a few bits of information before you get started", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default,handler: { action in self.performSegueWithIdentifier("AppInitView", sender: self) }))

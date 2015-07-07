@@ -20,6 +20,7 @@ class ContactInfoViewController: UIViewController {
         if let url = NSURL(string: "tel://\(phone)") {
             UIApplication.sharedApplication().openURL(url)
         }
+        println("CALLING: \(phone)")
     }
     
     override func viewDidLoad() {
