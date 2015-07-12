@@ -13,7 +13,8 @@ class SupportSettingsViewController: UIViewController, UITextFieldDelegate {
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
     var sponsorSwitchState:String = ""
-    var codeTextField: UITextField?;
+    
+    var nameTextField: UITextField?;
     var numberTextField: UITextField?;
 
     @IBOutlet var sponsorSwitch: UISwitch!
@@ -22,49 +23,54 @@ class SupportSettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func updateSponsorPhone(sender: UIButton) {
         
         var title = "Sponsor Contact";
-        var message = "Enter Phone Number Below\n\n\n";
+        var message = "Enter Their Name and Number Below\n\n\n";
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert);
         alert.modalInPopover = true;
         
         func handleOk(alertView: UIAlertAction!){
             
-            var code: String = self.codeTextField!.text;
+            var name: String = self.nameTextField!.text;
             var number: String = self.numberTextField!.text;
-            var fullNumber: String = ""
             
-            if((code != "") && (number != "")) {
-                fullNumber = "\(code)"+"\(number)"
-            }
-            
-            if(fullNumber != "") {
-                self.defaultsMgr.setValue(fullNumber, forKey:"sponsor")
+            if((name != "") && (number != "")) {
+                
+                var removePhoneFormat = number.stringByReplacingOccurrencesOfString("(", withString: "")
+                    removePhoneFormat = removePhoneFormat.stringByReplacingOccurrencesOfString(")", withString: "")
+                    removePhoneFormat = removePhoneFormat.stringByReplacingOccurrencesOfString(" ", withString: "")
+                    removePhoneFormat = removePhoneFormat.stringByReplacingOccurrencesOfString("-", withString: "")
+                
+                println("var\(removePhoneFormat)")
+                
+                var sponsorNameNumber:String = "\(name):\(removePhoneFormat)"
+                self.defaultsMgr.setValue(sponsorNameNumber, forKey:"sponsor")
             }
         }
         
         var phoneFrame = CGRectMake(0, 70, 270, 75);
         var inputView: UIView = UIView(frame: phoneFrame);
         
-        var codeFrame = CGRectMake(20, 0, 65, 25);
-        var zipCodeTextField: UITextField = UITextField(frame: codeFrame);
-        zipCodeTextField.tag = 1;
-        zipCodeTextField.placeholder = "Zip";
-        zipCodeTextField.textAlignment = NSTextAlignment.Center;
-        zipCodeTextField.borderStyle = UITextBorderStyle.RoundedRect;
-        zipCodeTextField.keyboardType = UIKeyboardType.PhonePad;
+        var nameFrame = CGRectMake(35, 0, 200, 25);
+        var myNameTextField: UITextField = UITextField(frame: nameFrame);
+        myNameTextField.placeholder = "Sponsor's Name";
+        myNameTextField.textAlignment = NSTextAlignment.Center;
+        myNameTextField.borderStyle = UITextBorderStyle.RoundedRect;
+        myNameTextField.keyboardType = UIKeyboardType.Default;
+        myNameTextField.autocorrectionType = UITextAutocorrectionType.No
+        myNameTextField.returnKeyType = UIReturnKeyType.Done
         
-        var numberFrame = CGRectMake(90, 0, 170, 25);
+        var numberFrame = CGRectMake(35, 30, 200, 25);
         var myNumberTextField: UITextField = UITextField(frame: numberFrame);
-        myNumberTextField.tag = 2;
-        myNumberTextField.placeholder = "Number (digits only)";
+        myNumberTextField.tag = 1;
+        myNumberTextField.placeholder = "Phone Number";
         myNumberTextField.textAlignment = NSTextAlignment.Center;
         myNumberTextField.borderStyle = UITextBorderStyle.RoundedRect;
         myNumberTextField.keyboardType = UIKeyboardType.PhonePad;
         
-        self.codeTextField = zipCodeTextField;
         self.numberTextField = myNumberTextField;
+        self.nameTextField = myNameTextField;
         
-        inputView.addSubview(self.codeTextField!);
         inputView.addSubview(self.numberTextField!);
+        inputView.addSubview(self.nameTextField!);
         
         alert.view.addSubview(inputView);
         
@@ -72,8 +78,7 @@ class SupportSettingsViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Update", style: UIAlertActionStyle.Default, handler:handleOk));
         
         self.presentViewController(alert, animated: true, completion: nil);
-        
-        self.codeTextField!.delegate = self
+ 
         self.numberTextField!.delegate = self
         
     }
@@ -93,7 +98,7 @@ class SupportSettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         loadShowSponsorFromDefaults()
@@ -109,10 +114,49 @@ class SupportSettingsViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    
     func loadShowSponsorFromDefaults() {
         if let sponsorValue = self.defaultsMgr.valueForKey("showSponsor") as? String {
             sponsorSwitchState = sponsorValue
+        }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 1 {
+            var newString = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            var components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            var decimalString = "".join(components) as NSString
+            var length = decimalString.length
+            var hasLeadingOne = length > 0 && decimalString.characterAtIndex(0) == (1 as unichar)
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11 {
+                var newLength = (textField.text as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            var formattedString = NSMutableString()
+            
+            if hasLeadingOne {
+                formattedString.appendString("1 ")
+                index += 1
+            }
+            if (length - index) > 3 {
+                var areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@) ", areaCode)
+                index += 3
+            }
+            if length - index > 3 {
+                var prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            var remainder = decimalString.substringFromIndex(index)
+            formattedString.appendString(remainder)
+            numberTextField!.text = formattedString as String
+            return false
+        } else {
+            return true
         }
     }
 
