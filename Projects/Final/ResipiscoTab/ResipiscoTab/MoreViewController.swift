@@ -9,7 +9,15 @@
 import UIKit
 
 class MoreViewController: UIViewController {
-
+    
+    @IBAction func inspiration(sender: UIButton) {
+        performSegueWithIdentifier("inspiration", sender: self)
+    }
+    
+    @IBAction func masterSetting(sender: UIButton) {
+        performSegueWithIdentifier("masterSettings", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +29,14 @@ class MoreViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func backFromMasterSettings(segue: UIStoryboardSegue) {
+        self.tabBarController?.selectedIndex = 4
+    }
+    
+    @IBAction func backFromInspiration(segue: UIStoryboardSegue) {
+        self.tabBarController?.selectedIndex = 4
+    }
 
     /*
     // MARK: - Navigation

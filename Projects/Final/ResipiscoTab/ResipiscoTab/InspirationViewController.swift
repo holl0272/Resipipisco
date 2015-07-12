@@ -16,28 +16,31 @@ class InspirationViewController: UIViewController {
     
     var viewedQuotes = [Int]()
     
+    @IBAction func returnFromInspiration(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("returnFromInspiration", sender: self)
+    }
+    
     @IBOutlet weak var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        title = "Inspiration"
+        
         getSomeData("Left")
         
         var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
-        self.textView.addGestureRecognizer(swipeLeft)
+        self.view.addGestureRecognizer(swipeLeft)
         
             var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
             swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-            self.textView.addGestureRecognizer(swipeRight)
+            self.view.addGestureRecognizer(swipeRight)
 
         
     }
-    
-//    func swipedView(){
-//        getSomeData()
-//    }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
