@@ -21,6 +21,9 @@
 		5C1569DD1B326A97006E0641 /* PasscodeRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1569DC1B326A97006E0641 /* PasscodeRecoveryViewController.swift */; };
 		5C3ECD371B4EA63A0088098E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD361B4EA6390088098E /* Reachability.swift */; };
 		5C3ECD4D1B4F6B5A0088098E /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C3ECD4C1B4F6B5A0088098E /* quotes.json */; };
+		5C3ECD4F1B5335310088098E /* SobrietyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */; };
+		5C3ECD511B5336570088098E /* PersonalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD501B5336570088098E /* PersonalizationViewController.swift */; };
+		5C3ECD531B5337250088098E /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD521B5337250088098E /* PasscodeViewController.swift */; };
 		5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */; };
 		5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */; };
 		5C54FAE01B350BCC009233B1 /* DayCounterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */; };
@@ -67,6 +70,9 @@
 		5C1569DC1B326A97006E0641 /* PasscodeRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeRecoveryViewController.swift; sourceTree = "<group>"; };
 		5C3ECD361B4EA6390088098E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5C3ECD4C1B4F6B5A0088098E /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyDateViewController.swift; sourceTree = "<group>"; };
+		5C3ECD501B5336570088098E /* PersonalizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizationViewController.swift; sourceTree = "<group>"; };
+		5C3ECD521B5337250088098E /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportSettingsViewController.swift; sourceTree = "<group>"; };
 		5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFinderSettingsViewController.swift; sourceTree = "<group>"; };
 		5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCounterSettingsViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 				5C05352D1B4E9B2800B0656C /* MoreViewController.swift */,
 				5C3ECD361B4EA6390088098E /* Reachability.swift */,
 				5C3ECD4C1B4F6B5A0088098E /* quotes.json */,
+				5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */,
+				5C3ECD501B5336570088098E /* PersonalizationViewController.swift */,
+				5C3ECD521B5337250088098E /* PasscodeViewController.swift */,
 			);
 			path = ResipiscoTab;
 			sourceTree = "<group>";
@@ -294,6 +303,8 @@
 				5CC88B1D1B48EBF500814E08 /* ContactsViewController.swift in Sources */,
 				5C54FAE81B367248009233B1 /* SupportFellowsViewController.swift in Sources */,
 				5C1569AB1B2DD220006E0641 /* SupportViewController.swift in Sources */,
+				5C3ECD4F1B5335310088098E /* SobrietyDateViewController.swift in Sources */,
+				5C3ECD531B5337250088098E /* PasscodeViewController.swift in Sources */,
 				5C1569AD1B2E1CFD006E0641 /* LogInViewController.swift in Sources */,
 				5C54FAEC1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift in Sources */,
 				5C3ECD371B4EA63A0088098E /* Reachability.swift in Sources */,
@@ -304,6 +315,7 @@
 				5C05352C1B4E189400B0656C /* InspirationViewController.swift in Sources */,
 				5CC88B1F1B48FA7700814E08 /* ContactInfoViewController.swift in Sources */,
 				5CC88B1B1B48E8CD00814E08 /* ViewContactsViewController.swift in Sources */,
+				5C3ECD511B5336570088098E /* PersonalizationViewController.swift in Sources */,
 				5C15698B1B2DD0F7006E0641 /* MeetingFinderViewController.swift in Sources */,
 				5C54FAE61B366C25009233B1 /* DayCounterChipsViewController.swift in Sources */,
 			);

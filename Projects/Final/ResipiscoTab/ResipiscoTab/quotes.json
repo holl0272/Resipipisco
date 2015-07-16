@@ -1,15 +1,15 @@
 {
     "quotes": [
                   {
-                  "text": "quote 1",
-                  "by": "john"
+                  "quote": "quote 1",
+                  "author": "john"
                   },
                   {
-               "text": "quote 2",
-               "by": "nick"
+               "quote": "quote 2",
+               "author": "nick"
                   },
                   {
-               "text": "quote 3",
-               "by": "dan"
+               "quote": "quote 3",
+               "author": "dan"
                   }]
 }

@@ -42,16 +42,23 @@ class MasterSettingsViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-        
+
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-//        var racesViewController = storyboard?.instantiateViewControllerWithIdentifier("RacesViewController") as RacesViewController
-//        
-//        racesViewController.species = species[indexPath.row]
-//        
-//        navigationController?.pushViewController(racesViewController, animated: true)
+        var masterSettingsIndexViewController = UIViewController()
         
+        switch (indexPath.row) {
+        case 0:
+            masterSettingsIndexViewController = storyboard?.instantiateViewControllerWithIdentifier("sobrietyDateViewController") as! SobrietyDateViewController
+        case 1:
+            masterSettingsIndexViewController = storyboard?.instantiateViewControllerWithIdentifier("personalizationViewController") as! PersonalizationViewController
+        case 2:
+            masterSettingsIndexViewController = storyboard?.instantiateViewControllerWithIdentifier("passcodeViewController") as! PasscodeViewController
+        default:
+            println("You selected cell ???")
+        }
+        
+        navigationController?.pushViewController(masterSettingsIndexViewController, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
