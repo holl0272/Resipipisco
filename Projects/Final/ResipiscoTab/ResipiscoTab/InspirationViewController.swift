@@ -12,13 +12,14 @@ class InspirationViewController: UIViewController {
     
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
-    var firstIndex:Int = -1
+    var pointer:Int = 0
     
+    var index:Int = -1
+    var firstIndex:Int = -1
     var randomIndex:Int = 0
     
-    var pointer:Int = 0
+    var jsonCount:Int = 0
     var viewedQuotes = [Int]()
-    
     var favoritesArray = [Int]()
     
     var bookmarkButton = UIBarButtonItem()
@@ -34,12 +35,13 @@ class InspirationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loadFavoritesFromDefaults()
         
         bookmarkButton = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: "addToFavorites")
         
         removeBookmark = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "removeFromFavorites")
         
-        navigationItem.rightBarButtonItem = bookmarkButton
+        self.navigationItem.rightBarButtonItem = bookmarkButton
         
         title = "Inspiration"
         
@@ -49,53 +51,69 @@ class InspirationViewController: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
         
-            var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-            swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-            self.view.addGestureRecognizer(swipeRight)
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     func addToFavorites() {
         navigationItem.rightBarButtonItem = removeBookmark
-        saveInDefaults(randomIndex)
-        println("Added \(randomIndex) to favs: \(favoritesArray)")
+        saveInDefaults(index)
+        println("Added \(index) to favs: \(favoritesArray)")
     }
     
     func removeFromFavorites() {
         navigationItem.rightBarButtonItem = bookmarkButton
-        loadFavoritesFromDefaults()
-        println("Removed \(randomIndex) from favs: \(favoritesArray)")
+        removeFavoritesFromDefaults(index)
+        println("Removed \(index) from favs: \(favoritesArray)")
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-        
-        if contains(favoritesArray, randomIndex) {
-          navigationItem.rightBarButtonItem = removeBookmark
-        }
-        else {
-           navigationItem.rightBarButtonItem = bookmarkButton
-        }
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
         
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
+                
                 if(pointer > 0) {
                     pointer--
                     getSomeData("Right")
                 }
+                
             case UISwipeGestureRecognizerDirection.Left:
+
+                var lastIndex = jsonCount - 1
+
+                if(pointer < lastIndex) {
                     pointer++
                     getSomeData("Left")
-
+                }
+                
             default:
                 break
             }
         }
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkFavArray(index:Int) {
+        if contains(favoritesArray, index) {
+            println("\(index) in favs")
+            dispatch_async(dispatch_get_main_queue()) {
+                self.navigationItem.rightBarButtonItem = self.removeBookmark
+            }
+        }
+        else {
+            println("\(index) NOT in favs")
+            dispatch_async(dispatch_get_main_queue()) {
+                self.navigationItem.rightBarButtonItem = self.bookmarkButton
+            }
+        }
     }
     
     func getSomeData(direction:String) {
@@ -109,7 +127,6 @@ class InspirationViewController: UIViewController {
             let session = NSURLSession.sharedSession()
             
             func onCompletion(data: NSData!, response: NSURLResponse!, error: NSError!) {
-                println("DONE!")
                 
                 var e : NSError? = nil
                 var externalJSON = NSJSONSerialization.JSONObjectWithData(
@@ -119,60 +136,71 @@ class InspirationViewController: UIViewController {
                 
                 let quotes = externalJSON?.valueForKey("quotes") as? NSArray
                 let count:Int = quotes!.count
+                jsonCount = count
                 
-                var index:Int = 0
-                
-            if(direction == "Left") {
-                
-                randomIndex = Int(arc4random_uniform(UInt32(count)))
-                
-                while(contains(viewedQuotes, randomIndex)) {
-                    println("random and index match")
-                    randomIndex = Int(arc4random_uniform(UInt32(count)))
-                }
-                
-                if(firstIndex == -1) {
-                    viewedQuotes.append(randomIndex)
-                    firstIndex = randomIndex
-                    index = randomIndex
+                if(direction == "Left") {
+                    
+                    println("c: \(viewedQuotes.count)")
+                    println("j: \(jsonCount)")
+                    
+                    if(viewedQuotes.count < jsonCount) {
+                        
+                        randomIndex = Int(arc4random_uniform(UInt32(count)))
+                        
+                        while(contains(viewedQuotes, randomIndex)) {
+                            println("random and index match")
+                            randomIndex = Int(arc4random_uniform(UInt32(count)))
+                        }
+                    }
+                    
+                    if(firstIndex == -1) {
+                        viewedQuotes.append(randomIndex)
+                        firstIndex = randomIndex
+                        index = randomIndex
+                    }
+                    else {
+                        if(pointer == viewedQuotes.count) {
+                            viewedQuotes.append(randomIndex)
+                        }
+                        
+                        index = viewedQuotes[pointer]
+                    }
                 }
                 else {
-                    if(pointer == viewedQuotes.count) {
-                        viewedQuotes.append(randomIndex)
-                    }
                     index = viewedQuotes[pointer]
                 }
-            }
-            else {
-                index = viewedQuotes[pointer]
-            }
                 
-            println("pointer \(pointer)")
-
-            println(viewedQuotes)
-
-            let selectedQuote = quotes?.objectAtIndex(index) as? NSDictionary
+                println("pointer \(pointer)")
+                println("\(index)")
+                checkFavArray(index)
+                println(viewedQuotes)
+                println(favoritesArray)
                 
-            let text = selectedQuote?.valueForKey("quote") as! String
-            let by = selectedQuote?.valueForKey("author") as! String
-                    
-            let result = "INDEX: \(index)\n\n \(text) \n\nAuthor: \(by)"
-                    
-            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
-                self.textView.text = result
+                let selectedQuote = quotes?.objectAtIndex(index) as? NSDictionary
+                
+                let text = selectedQuote?.valueForKey("quote") as! String
+                let by = selectedQuote?.valueForKey("author") as! String
+                
+                let result = "INDEX: \(index)\n\n \(text) \n\nAuthor: \(by)"
+                
+                dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
+                    self.textView.text = result
+                }
+                
             }
-        }
             
             let dataTask = session.dataTaskWithURL(url!, completionHandler: onCompletion)
             dataTask.resume()
+            
         }
         else {
             println("Not connected to the internet")
             
             let filePath = NSBundle.mainBundle().pathForResource("quotes",ofType:"json")
             var readError:NSError?
+            
             if let data = NSData(contentsOfFile:filePath!, options:NSDataReadingOptions.DataReadingUncached, error:&readError) {
-
+                
                 func parseJSON(inputData: NSData) -> NSDictionary{
                     var error: NSError?
                     var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
@@ -180,24 +208,66 @@ class InspirationViewController: UIViewController {
                 }
                 
                 var quotesJSON = parseJSON(data)
+                let quotes = quotesJSON.valueForKey("quotes") as? NSArray
+                let count:Int = quotes!.count
+                jsonCount = count
                 
-                var randomIndex = Int(arc4random_uniform(UInt32(3)))
+                if(direction == "Left") {
+                    
+                    println("c: \(viewedQuotes.count)")
+                    println("j: \(jsonCount)")
+                    
+                    if(viewedQuotes.count < jsonCount) {
+                    
+                        randomIndex = Int(arc4random_uniform(UInt32(count)))
+                    
+                        while(contains(viewedQuotes, randomIndex)) {
+                            println("random and index match")
+                            randomIndex = Int(arc4random_uniform(UInt32(count)))
+                        }
+                    }
+                    
+                    if(firstIndex == -1) {
+                        viewedQuotes.append(randomIndex)
+                        firstIndex = randomIndex
+                        index = randomIndex
+                    }
+                    else {
+                        if(pointer == viewedQuotes.count) {
+                            viewedQuotes.append(randomIndex)
+                        }
+                        
+                        index = viewedQuotes[pointer]
+                    }
+                }
+                else {
+                    index = viewedQuotes[pointer]
+                }
                 
-                var quoteText = quotesJSON["quotes"]![randomIndex]["quote"] as! String
-                var quoteAuthor = quotesJSON["quotes"]![randomIndex]["author"] as! String
-
-                println(quoteText)
-                println(quoteAuthor)
+                println("pointer \(pointer)")
+                println("\(index)")
+                checkFavArray(index)
+                println(viewedQuotes)
+                println(favoritesArray)
                 
-                self.textView.text! = "\(quoteText) \n\nBy: \(quoteAuthor)"
+                var quoteText = quotesJSON["quotes"]![index]["quote"] as! String
+                var quoteAuthor = quotesJSON["quotes"]![index]["author"] as! String
+                
+                self.textView.text! = "INDEX: \(index)\n\n \(quoteText) \n\nBy: \(quoteAuthor)"
+                
             }
             
         }
-
+        
     }
     
     func saveInDefaults(favIndex: Int) {
         favoritesArray.append(favIndex)
+        self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
+    }
+    
+    func removeFavoritesFromDefaults(favIndex: Int) {
+        favoritesArray = favoritesArray.filter({$0 != favIndex})
         self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
     }
     

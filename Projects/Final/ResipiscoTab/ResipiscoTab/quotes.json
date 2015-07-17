@@ -1,15 +1,15 @@
 {
     "quotes": [
-                  {
-                  "quote": "quote 1",
-                  "author": "john"
-                  },
-                  {
-               "quote": "quote 2",
-               "author": "nick"
-                  },
-                  {
-               "quote": "quote 3",
-               "author": "dan"
-                  }]
+               {
+               "quote": "It is one of the most beautiful compensations of this life, that no man can sincerely try to help another without helping himself.",
+               "author": "Ralph Waldo Emerson"
+               },
+               {
+               "quote": "We make a living by what we get, we make a life by what we give.",
+               "author": "Winston Churchill"
+               },
+               {
+               "quote": "Those who bring sunshine to the lives of others cannot keep it from themselves.",
+               "author": "Sir James Barrie"
+               }]
 }
