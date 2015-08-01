@@ -14,21 +14,20 @@ class InspirationViewController: UIViewController {
     
     var pointer:Int = 0
     
+    var id:Int = 0
     var index:Int = -1
     var firstIndex:Int = -1
     var randomIndex:Int = 0
     
     var jsonCount:Int = 0
     var viewedQuotes = [Int]()
+    
     var favoritesArray = [Int]()
+    var favoriteIDsArray = [Int]()
     
     var bookmarkButton = UIBarButtonItem()
     var removeBookmark = UIBarButtonItem()
-    
-    @IBAction func returnFromInspiration(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("returnFromInspiration", sender: self)
-    }
-    
+        
     @IBOutlet weak var textView: UITextView!
 
     override func viewDidLoad() {
@@ -36,6 +35,7 @@ class InspirationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         loadFavoritesFromDefaults()
+        loadFavoriteIDsFromDefaults()
         
         bookmarkButton = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: "addToFavorites")
         
@@ -58,14 +58,16 @@ class InspirationViewController: UIViewController {
     
     func addToFavorites() {
         navigationItem.rightBarButtonItem = removeBookmark
-        saveInDefaults(index)
+        saveInDefaults(index, favID: id)
         println("Added \(index) to favs: \(favoritesArray)")
+        println("Added \(id) to favIDs: \(favoriteIDsArray)")
     }
     
     func removeFromFavorites() {
         navigationItem.rightBarButtonItem = bookmarkButton
-        removeFavoritesFromDefaults(index)
+        removeFavoritesFromDefaults(index, favID: id)
         println("Removed \(index) from favs: \(favoritesArray)")
+        println("Removed \(id) from favIDs: \(favoriteIDsArray)")
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -101,15 +103,15 @@ class InspirationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func checkFavArray(index:Int) {
-        if contains(favoritesArray, index) {
-            println("\(index) in favs")
+    func checkFavArray(favID:Int) {
+        if contains(favoriteIDsArray, favID) {
+            println("\(favID) in favs")
             dispatch_async(dispatch_get_main_queue()) {
                 self.navigationItem.rightBarButtonItem = self.removeBookmark
             }
         }
         else {
-            println("\(index) NOT in favs")
+            println("\(favID) NOT in favs")
             dispatch_async(dispatch_get_main_queue()) {
                 self.navigationItem.rightBarButtonItem = self.bookmarkButton
             }
@@ -121,7 +123,7 @@ class InspirationViewController: UIViewController {
         var hasInternetConnection:Bool = Reachability.isConnectedToNetwork()
         
         if(hasInternetConnection) {
-            let dataUrlStr = "http://www.solaris.solutions/admin/iOS/quotes.json"
+            let dataUrlStr = "http://www.solaris.solutions/admin/iOS/inspiration.json"
             let url = NSURL(string: dataUrlStr)
             
             let session = NSURLSession.sharedSession()
@@ -135,6 +137,7 @@ class InspirationViewController: UIViewController {
                     ) as? NSDictionary
                 
                 let quotes = externalJSON?.valueForKey("quotes") as? NSArray
+                                
                 let count:Int = quotes!.count
                 jsonCount = count
                 
@@ -171,21 +174,28 @@ class InspirationViewController: UIViewController {
                 }
                 
                 println("pointer \(pointer)")
-                println("\(index)")
-                checkFavArray(index)
-                println(viewedQuotes)
-                println(favoritesArray)
+                println("index: \(index)")
+                println("viewed: \(viewedQuotes)")
+                println("favID: \(favoriteIDsArray)")
+                println("favIndex: \(favoritesArray)")
                 
                 let selectedQuote = quotes?.objectAtIndex(index) as? NSDictionary
                 
                 let text = selectedQuote?.valueForKey("quote") as! String
                 let by = selectedQuote?.valueForKey("author") as! String
+                var jsonID = selectedQuote?.valueForKey("id") as! String!
                 
-                let result = "INDEX: \(index)\n\n \(text) \n\nAuthor: \(by)"
+                if let indexID = NSNumberFormatter().numberFromString(jsonID) {
+                    id = Int(indexID)
+                }
+                
+                let result = "ID: \(id)\nINDEX: \(index)\n\n\(text) \n\nAuthor: \(by)"
                 
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
                     self.textView.text = result
                 }
+                
+                checkFavArray(id)
                 
             }
             
@@ -245,15 +255,22 @@ class InspirationViewController: UIViewController {
                 }
                 
                 println("pointer \(pointer)")
-                println("\(index)")
-                checkFavArray(index)
-                println(viewedQuotes)
-                println(favoritesArray)
+                println("index: \(index)")
+                println("viewed: \(viewedQuotes)")
+                println("favID: \(favoriteIDsArray)")
+                println("favIndex: \(favoritesArray)")
                 
                 var quoteText = quotesJSON["quotes"]![index]["quote"] as! String
                 var quoteAuthor = quotesJSON["quotes"]![index]["author"] as! String
+                var quoteID = quotesJSON["quotes"]![index]["id"] as! String
                 
-                self.textView.text! = "INDEX: \(index)\n\n \(quoteText) \n\nBy: \(quoteAuthor)"
+                if let indexID = NSNumberFormatter().numberFromString(quoteID) {
+                    id = Int(indexID)
+                }
+                
+                self.textView.text! = "ID: \(id)\nINDEX: \(index)\n\n\(quoteText) \n\nBy: \(quoteAuthor)"
+                
+                checkFavArray(id)
                 
             }
             
@@ -261,22 +278,50 @@ class InspirationViewController: UIViewController {
         
     }
     
-    func saveInDefaults(favIndex: Int) {
+    func saveInDefaults(favIndex: Int, favID: Int) {
         favoritesArray.append(favIndex)
         self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
+        favoriteIDsArray.append(favID)
+        self.defaultsMgr.setValue(favoriteIDsArray, forKey:"favoriteIDs")
+
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
     
-    func removeFavoritesFromDefaults(favIndex: Int) {
+//    func saveInDefaults(favIndex: Int) {
+//        favoritesArray.append(favIndex)
+//        self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
+//    }
+//
+//    func saveIdInDefaults(favID: Int) {
+//        favoriteIDsArray.append(favID)
+//        self.defaultsMgr.setValue(favoritesArray, forKey:"favoriteIDs")
+//    }
+
+    func removeFavoritesFromDefaults(favIndex: Int, favID: Int) {
         favoritesArray = favoritesArray.filter({$0 != favIndex})
         self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
+        favoriteIDsArray = favoriteIDsArray.filter({$0 != favID})
+        self.defaultsMgr.setValue(favoriteIDsArray, forKey:"favoriteIDs")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
+    
+//    func removeFavoritesFromDefaults(favIndex: Int) {
+//        favoritesArray = favoritesArray.filter({$0 != favIndex})
+//        self.defaultsMgr.setValue(favoritesArray, forKey:"favorites")
+//    }
     
     func loadFavoritesFromDefaults() {
         if let favoritesIndexArray = self.defaultsMgr.valueForKey("favorites") as? [Int] {
             self.favoritesArray = favoritesIndexArray
         }
     }
-    
+
+    func loadFavoriteIDsFromDefaults() {
+        if let favoriteIDsIndexArray = self.defaultsMgr.valueForKey("favoriteIDs") as? [Int] {
+            self.favoriteIDsArray = favoriteIDsIndexArray
+        }
+    }
 
     /*
     // MARK: - Navigation

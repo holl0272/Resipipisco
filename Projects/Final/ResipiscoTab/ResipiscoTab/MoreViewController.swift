@@ -10,6 +10,11 @@ import UIKit
 
 class MoreViewController: UIViewController {
     
+    
+    @IBAction func inspirationMaster(sender: UIButton) {
+         performSegueWithIdentifier("inspirationMaster", sender: self)
+    }
+    
     @IBAction func inspiration(sender: UIButton) {
         performSegueWithIdentifier("inspiration", sender: self)
     }
@@ -31,6 +36,10 @@ class MoreViewController: UIViewController {
     
     
     @IBAction func backFromMasterSettings(segue: UIStoryboardSegue) {
+        self.tabBarController?.selectedIndex = 4
+    }
+    
+    @IBAction func backFromInspirationMaster(segue: UIStoryboardSegue) {
         self.tabBarController?.selectedIndex = 4
     }
     

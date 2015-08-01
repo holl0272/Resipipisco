@@ -190,6 +190,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         var contactInfoViewController = storyboard?.instantiateViewControllerWithIdentifier("ContactInfoViewController") as! ContactInfoViewController
         
         contactInfoViewController.info = info
+        //contactInfoViewController.inspiration = RandomInspiration.sharedInstance.inspiration
         
         navigationController?.pushViewController(contactInfoViewController, animated: true)
     }

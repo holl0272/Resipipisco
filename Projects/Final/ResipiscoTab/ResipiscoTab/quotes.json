@@ -1,15 +1,334 @@
 {
-    "quotes": [
-               {
-               "quote": "It is one of the most beautiful compensations of this life, that no man can sincerely try to help another without helping himself.",
-               "author": "Ralph Waldo Emerson"
-               },
-               {
-               "quote": "We make a living by what we get, we make a life by what we give.",
-               "author": "Winston Churchill"
-               },
-               {
-               "quote": "Those who bring sunshine to the lives of others cannot keep it from themselves.",
-               "author": "Sir James Barrie"
-               }]
+    
+    "quotes":[
+              {
+              "id":"1",
+              "quote":"It is one of the most beautiful compensations of this life, that no man can sincerely try to help another without helping himself.",
+              "author":"Ralph Waldo Emerson"
+              },
+              {
+              "id":"2",
+              "quote":"We make a living by what we get, we make a life by what we give.",
+              "author":"Winston Churchill"
+              },
+              {
+              "id":"3",
+              "quote":"Those who bring sunshine to the lives of others cannot keep it from themselves.",
+              "author":"Sir James Barrie"
+              },
+              {
+              "id":"4",
+              "quote":"The dark past is the greatest possession you have — the key to life and happiness for others. With it you can avert death and misery for them.",
+              "author":"AA, 2001, p. 124"
+              },
+              {
+              "id":"5",
+              "quote":"The more I shared secrets that I thought were so awful, the more people were drawn to me and I to them. I found some serenity when I got out of the driver's seat, I found God working in my life.",
+              "author":"Unknown"
+              },
+              {
+              "id":"6",
+              "quote":"I sought my soul, but my soul I could not see. I sought my God, but my God eluded me. I sought my brother and I found all three...",
+              "author":"Martin Luther King Jr."
+              },
+              {
+              "id":"7",
+              "quote":"We had a new Employer. Being all powerful, He provided what we needed, if we kept close to Him and performed His work well. Established on such a footing we became …interested in seeing what we could contribute to life.",
+              "author":"AA, 2001, p. 63"
+              },
+              {
+              "id":"8",
+              "quote":"Self-pity becomes a stumbling block when we get so narrowly focused upon our problems. We forget we are a part of a whole throng of fellow pilgrims on this path. It helps to notice others beside ourselves who are seeking courage to live their lives.",
+              "author":"Hazelden Publishing, 1986, p. 3"
+              },
+              {
+              "id":"9",
+              "quote":"He becomes angry, indignant, self-pitying. What is his basic trouble? Is he not really a self-seeker even when trying to be kind? Is he not a victim of the delusion that he can wrest satisfaction and happiness out of this world if he only manages well?",
+              "author":"AA, 2001, p. 161"
+              },
+              {
+              "id":"10",
+              "quote":"Ask Him in your morning meditation what you can do each day for the man who is still sick. Give freely of what you find...",
+              "author":"AA, 2001, p. 164"
+              },
+              {
+              "id":"11",
+              "quote":"...the alcoholic is an extreme example of self-will run riot...Above everything, we alcoholics must get rid of selfishness. God makes that possible.",
+              "author":"AA, 2001, p. 62"
+              },
+              {
+              "id":"12",
+              "quote":"Though they knew they must help other alcoholics if they would remain sober, that motive became secondary. It was transcended by the happiness they found in giving themselves for others. They shared their homes, their slender resources and gladly devoted spare hours to fellow-sufferers.",
+              "author":"AA, 2001, p. 159"
+              },
+              {
+              "id":"13",
+              "quote":"The problems of the community might engage attention.",
+              "author":"AA, 2001, p. 131"
+              },
+              {
+              "id":"14",
+              "quote":"But those of us who have tried to shoulder the entire burden and troubles of others find we are soon overcome by them.",
+              "author":"AA, 2001, p. 132"
+              },
+              {
+              "id":"15",
+              "quote":"New acquaintances who know nothing of alcoholism might be made and thoughtful consideration given their needs.",
+              "author":"AA, 2001, p. 131"
+              },
+              {
+              "id":"16",
+              "quote":"He will be on firmer foundation than the man who is placing business or professional success ahead of spiritual development.",
+              "author":"AA, 2001, p. 130"
+              },
+              {
+              "id":"17",
+              "quote":"You as well as your husband ought to think of what you can put into life instead of how much you can take out. Inevitably, your lives will be fuller for doing so.",
+              "author":"AA, 2001, p. 120"
+              },
+              {
+              "id":"18",
+              "quote":"Putting these principles into action at home and at work",
+              "author":"AA, 2001, p. 98"
+              },
+              {
+              "id":"19",
+              "quote":"We shall be of little use if your attitude is one of bitterness or hostility.",
+              "author":"AA, 2001, p. 103"
+              },
+              {
+              "id":"20",
+              "quote":"Search out another alcoholic.",
+              "author":"AA, 2001, p. 96"
+              },
+              {
+              "id":"21",
+              "quote":"Helping others is the foundation stone of your recovery. A kindly act once in a while isn't enough. You have to act the Good Samaritan every day, if need be. It may mean the loss of many nights' sleep, great interference with your pleasures, interruptions to your business. It may mean sharing your money and your home, counseling frantic wives and relatives, innumerable trips to police courts, sanitariums, hospitals, jails and asylums. Your telephone may jangle at any time of the day or night.",
+              "author":"AA, 2001, p. 97"
+              },
+              {
+              "id":"22",
+              "quote":"To be vital, faith must be accompanied by self-sacrifice and unselfish, constructive action.",
+              "author":"AA, 2001, p. 89"
+              },
+              {
+              "id":"23",
+              "quote":"Frequent contact with newcomers and with each other is the bright spot of our lives.",
+              "author":"AA, 2001, p. 89"
+              },
+              {
+              "id":"24",
+              "quote":"Do not be discouraged if your prospect does not respond at once. Search out another alcoholic and try again. You are sure to find someone desperate enough to accept with eagerness what you offer.",
+              "author":"AA, 2001, p. 96"
+              },
+              {
+              "id":"25",
+              "quote":"Do not think of what you will get out of the occasion — think of what you can bring to it.",
+              "author":"AA, 2001, p. 102"
+              },
+              {
+              "id":"26",
+              "quote":"The fact is that he should work with other people to maintain his own sobriety.",
+              "author":"AA, 2001, p. 119"
+              },
+              {
+              "id":"27",
+              "quote":"To be helpful is our only aim.",
+              "author":"AA, 2001, p. 89"
+              },
+              {
+              "id":"28",
+              "quote":"Your job now is to be at the place where you may be of maximum helpfulness to others; so never hesitate to go anywhere if you can be helpful.",
+              "author":"AA, 2001, p. 102"
+              },
+              {
+              "id":"29",
+              "quote":"Our common means of deliverance are effective for ourselves only when constantly carried to others",
+              "author":"AA Today, p. 7-8"
+              },
+              {
+              "id":"30",
+              "quote":"Allowing enthusiasm to bubble up from you and pervade your very existence will bring an abundance of joy to yourself and others. It's one of the simplest ways I can think of to serve others.",
+              "author":"Carlson & Carlson, 2001, p. 163"
+              },
+              {
+              "id":"31",
+              "quote":"We find that we can do nothing ourselves to help other alcoholics except to tell them our own story of how we found the way out. If the other person is helped, it's by the grace of God and not by what we do or say.",
+              "author":"24 Hours a Day, March 12th Thought of the Day"
+              },
+              {
+              "id":"32",
+              "quote":"Shared joy is double joy, and shared sorrow is half-sorrow.",
+              "author":"Swedish Proverb"
+              },
+              {
+              "id":"33",
+              "quote":"In the sphere of material things, giving means being rich. Not he who has much is rich, but he who gives much.",
+              "author":"Erich Fromm"
+              },
+              {
+              "id":"34",
+              "quote":"The only really happy people are those who have learned how to serve.",
+              "author":"Albert Schweitzer"
+              },
+              {
+              "id":"35",
+              "quote":"Your greatest life messages and your most effective ministry will come out of your deepest hurts.",
+              "author":"Warren, 2002, p. 275"
+              },
+              {
+              "id":"36",
+              "quote":"The fragrance always remains on the hand that gives the rose.",
+              "author":"Ghandi"
+              },
+              {
+              "id":"37",
+              "quote":"How far that little candle throws his beams!",
+              "author":"Shakespeare, W. The Merchant of Venice."
+              },
+              {
+              "id":"38",
+              "quote":"What would Integrity have me do?",
+              "author":"Khamisa, 2007, p.81"
+              },
+              {
+              "id":"39",
+              "quote":"If human beings can be trained for cruelty and greed and a belief in power which comes through hate and fear and force, certainly we can train equally well for greatness and mercy and the power of love which comes because of the strength of the good qualities to be found in the soul of every human being.",
+              "author":"Eleanor Roosevelt"
+              },
+              {
+              "id":"40",
+              "quote":"The only true voyage of discovery, the only fountain of Eternal Youth, would be not to visit strange lands but to possess other eyes, to behold the universe through the eyes of another, of a hundred others, to behold the hundred universes that each of them beholds, that each of them is.",
+              "author":"Proust, 1932, p. 559"
+              },
+              {
+              "id":"41",
+              "quote":"The best way out of any bad situation is always the kindest way.",
+              "author":"Roy L. Smith"
+              },
+              {
+              "id":"42",
+              "quote":"I destroy my enemy if I make him my friend.",
+              "author":"A. Lincoln"
+              },
+              {
+              "id":"43",
+              "quote":"Your visitor is going out of his way, taking up his time, perhaps missing a pleasant evening at home or at the theatre by calling on you. His motives are two-fold:He is selfish in that by calling on you he is taking out a little more sobriety insurance for himself; and secondly, he is genuinely anxious to pass along the peace and happiness a new way of life has brought him. He is also paying off a debt — paying the people who led him to the path of sobriety by helping someone else.",
+              "author":"AA, 1999"
+              },
+              {
+              "id":"44",
+              "quote":"I have found it of enormous value when I can permit myself to understand the other person. The way in which I have worded in this statement may seem strange to you. Is it necessary to permit oneself to understand another? I think that it is. Our first reaction to most of the statements which we hear from other people is an evaluation, or judgment, rather than an understanding of it. When someone expresses some feeling or attitude or belief, our tendency is, almost immediately, to feel That's right; or That's stupid; That's abnormal; That's unreasonable; That's incorrect; That's not nice. Very rarely do we permit ourselves to understand precisely what the meaning of the statement is to the other person.",
+              "author":"Rogers, 1961, p.16"
+              },
+              {
+              "id":"45",
+              "quote":"It is pride when we feel that we are unusually well equipped to help the new man, forgetting our own early days, and overlooking the possibility that we may need help tomorrow. It is pride when we regard help to another as our good deed of the month and not as medicine for our own ailment which is only arrested and not cured.",
+              "author":"Cleveland Central Committee of A.A."
+              },
+              {
+              "id":"46",
+              "quote":"All true communication must be founded on mutual need. We saw that each sponsor would have to admit humbly his own needs as clearly as those of his prospect.",
+              "author":"AA Today, p. 10"
+              },
+              {
+              "id":"47",
+              "quote":"The noblest question in the world is:'What good may I do in it?",
+              "author":"Benjamin Franklin"
+              },
+              {
+              "id":"48",
+              "quote":"Politeness and consideration for others is like investing pennies and getting dollars back.",
+              "author":"Thomas Sowell"
+              },
+              {
+              "id":"49",
+              "quote":"They told me, 'You've got to get out and work a little; you've got to give.' They told me that giving was living, and living was loving, and loving was God.",
+              "author":"AA., 2003, Experience, Strength and Hop"
+              },
+              {
+              "id":"50",
+              "quote":"AA service is anything whatever that helps us reach a fellow sufferer — ranging all the way from the Twelfth Step itself to a ten-cent phone call and a cup of coffee, and to AA's General Service Headquarters for national and international action. The sum total of all these services is our Third Legacy.",
+              "author":"Bill W., Letter, July 1955"
+              },
+              {
+              "id":"51",
+              "quote":"It is pride when we regard help to another as our good deed of the month and not as medicine for our own ailment which is only arrested and not cured.",
+              "author":"AA, 1964, Misunderstanding Pt. 3, Central Bulletin, 22."
+              },
+              {
+              "id":"52",
+              "quote":"The alcoholic is an extreme example of self-will run riot, though he usually doesn't think so. Above everything, we alcoholics must be rid of this selfishness. We must, or it kills us!",
+              "author":"AA, 4th Eds, p. 62"
+              },
+              {
+              "id":"53",
+              "quote":"This work kept me sober. It wasn't a question of those alcoholics giving me anything. My stability came out of trying to give, not out of demanding that I receive.",
+              "author":"Grapevine, January 1958"
+              },
+              {
+              "id":"54",
+              "quote":"Nothing impacts a still-suffering alcoholic more than hearing the language of the heart from another alcoholic in recovery.",
+              "author":"51st Annual Meeting of the General Service Conference of Alcoholics Anonymous, 2001"
+              },
+              {
+              "id":"55",
+              "quote":"I think the kind of service that really counts is giving of yourself, and that almost invariably requires effort and time.",
+              "author":"51st Annual Meeting of the General Service Conference of Alcoholics Anonymous, 2001"
+              },
+              {
+              "id":"56",
+              "quote":"Service includes practicing love, tolerance, patience and willingness, especially listening and keeping an open mind in all our affairs. We are required to give of ourselves in service to others without expecting any 'payback' or recovering anything in return for A.A. service.",
+              "author":"51st Annual Meeting of the General Service Conference of Alcoholics Anonymous, 2001"
+              },
+              {
+              "id":"57",
+              "quote":"He that does good to another does good also to himself, not only in the consequence but in the very act. For the consciousness of well-doing is in itself ample reward.",
+              "author":"Seneca"
+              },
+              {
+              "id":"58",
+              "quote":"Love cures people — both the ones who give it and the ones who receive it.",
+              "author":"Dr. Karl Menninger"
+              },
+              {
+              "id":"59",
+              "quote":"When your burden is heaviest, you can always lighten a little some other burden. At the times when you cannot see God, there is still open to you this sacred possibility, to show God; for it is the love and kindness of human hearts through which the divine really comes home to men, whether they name it or not. Let this thought, then, stay with you:there may be times when you cannot find help, but there is no time when you cannot give help.",
+              "author":"George S. Merriam"
+              },
+              {
+              "id":"60",
+              "quote":"If you're not here to serve others, what is your function?",
+              "author":"Todd Vogler"
+              },
+              {
+              "id":"61",
+              "quote":"Help thy brother's boat across, and lo! Thine own has reached the shore.",
+              "author":"Hindu Proverb"
+              },
+              {
+              "id":"62",
+              "quote":"Whoever survives a test, whatever it may be, must tell the story. That is his duty.",
+              "author":"Elie Wiesel"
+              },
+              {
+              "id":"63",
+              "quote":"When your prospect has made such reparation as he can to his family, and has thoroughly explained to them the new principles by which he is living, he should proceed to put those principles into action at home.",
+              "author":"AA, 2001, p. 98"
+              },
+              {
+              "id":"64",
+              "quote":"When we give to others, we get out of our own way enough to get a different perspective on our lives.",
+              "author":"'Living Clean:The Journey Continues', p. 67"
+              },
+              {
+              "id":"65",
+              "quote":"Everyone can be great because everyone can serve.",
+              "author":"Martin Luther King Jr."
+              },
+              {
+              "id":"66",
+              "quote":"One thing I know:The only ones among you who will be really happy are those who will have sought and found how to serve.",
+              "author":"Albert Schweitzer"
+              }]
 }

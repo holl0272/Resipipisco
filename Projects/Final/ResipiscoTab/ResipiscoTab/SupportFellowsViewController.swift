@@ -11,12 +11,15 @@ import UIKit
 class SupportFellowsViewController: UIViewController {
     
     @IBOutlet var hiddenSponsorNumber: UILabel!
-
+    
+    var getInspired = RandomInspiration()
     
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
     var sponsorSwitchState:String = ""
 
+    @IBOutlet weak var inspirationField: UITextView!
+    
     @IBOutlet var mySponsorButton: UIButton!
     @IBOutlet var mySuppotButton: UIButton!
 
@@ -64,11 +67,25 @@ class SupportFellowsViewController: UIViewController {
         if(sponsorSwitchState == "0") {
             self.mySponsorButton.hidden = true
         }
+        
+        var inAppInspiration = loadInAppInspirationSettingFromDefaults() as Bool
+        
+        if(inAppInspiration) {
+            self.inspirationField.text = getInspired.returnQuote()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadInAppInspirationSettingFromDefaults() -> Bool {
+        var showInspiration:Bool!
+        if let inAppSetting = self.defaultsMgr.valueForKey("inAppInspiration") as? Bool {
+            showInspiration = inAppSetting
+        }
+        return showInspiration
     }
     
     func loadSponsorFromDefaults() -> String {

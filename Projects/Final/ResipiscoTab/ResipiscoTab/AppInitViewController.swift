@@ -134,6 +134,7 @@ class AppInitViewController: UIViewController, UITextFieldDelegate {
     
     func saveInDefaults() {
         self.defaultsMgr.setValue("initiated", forKey:"appInit")
+        self.defaultsMgr.setValue(true, forKey:"inAppInspiration")
     }
     
     func printDate(date:NSDate) -> String {

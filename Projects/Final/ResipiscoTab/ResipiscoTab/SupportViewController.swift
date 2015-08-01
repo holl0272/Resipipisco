@@ -10,14 +10,18 @@ import UIKit
 
 class SupportViewController: UIViewController {
     
+    var getInspired = RandomInspiration()
+    
     let defaultsMgr = NSUserDefaults.standardUserDefaults()
-
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var secondContainerView: UIView!
     @IBOutlet weak var thirdContainerView: UIView!
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
+        
+        self.getInspired = RandomInspiration()
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -35,6 +39,7 @@ class SupportViewController: UIViewController {
         }
         
         if (secondContainerView.hidden == false) {
+            
             var sponsorPhoneNumber:String = loadSponsorFromDefaults()
             var sponsorButtonStatus = loadShowSponsorFromDefaults()
             if(sponsorButtonStatus == "1") {
@@ -45,6 +50,8 @@ class SupportViewController: UIViewController {
             else {
                 secondContainerView.viewWithTag(1)?.hidden = true
             }
+            
+            getRandomInspiration()
         }
     }
     
@@ -52,6 +59,7 @@ class SupportViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         thirdContainerView.hidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,12 +72,13 @@ class SupportViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
         self.tabBarController?.tabBar.hidden = false
     }
-    
-    @IBAction func backFromModal(segue: UIStoryboardSegue) {
-        self.tabBarController?.selectedIndex = 3
+        
+    @IBAction func backFromContactsTable(segue: UIStoryboardSegue) {
+        self.tabBarController?.selectedIndex = 2
         segmentedControl.selectedSegmentIndex = 1
         secondContainerView.hidden = false
         thirdContainerView.hidden = true
+        getRandomInspiration()
     }
     
     func loadShowSponsorFromDefaults() -> String {
@@ -86,6 +95,23 @@ class SupportViewController: UIViewController {
             sponsorNumberString = sponsorNumber
         }
         return sponsorNumberString
+    }
+    
+    func getRandomInspiration() {
+        var inspirationField = secondContainerView.viewWithTag(3) as? UITextView
+        var inAppInspiration = loadInAppInspirationSettingFromDefaults() as Bool
+        
+        if(inAppInspiration) {
+            inspirationField?.text! = getInspired.returnQuote()
+        }
+    }
+    
+    func loadInAppInspirationSettingFromDefaults() -> Bool {
+        var showInspiration:Bool!
+        if let inAppSetting = self.defaultsMgr.valueForKey("inAppInspiration") as? Bool {
+            showInspiration = inAppSetting
+        }
+        return showInspiration
     }
     
     /*

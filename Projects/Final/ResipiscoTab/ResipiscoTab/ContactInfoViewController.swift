@@ -10,9 +10,13 @@ import UIKit
 
 class ContactInfoViewController: UIViewController {
     
+    let defaultsMgr = NSUserDefaults.standardUserDefaults()
+    
     var info: String!
     var phone: String!
-
+    
+    var getInspired = RandomInspiration()
+    
     @IBOutlet var contactName: UILabel!
     @IBOutlet var contactNumber: UILabel!
     
@@ -23,9 +27,11 @@ class ContactInfoViewController: UIViewController {
         println("CALLING: \(phone)")
     }
     
+    @IBOutlet weak var inspirationField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         var delimiter = ":"
         var fullString = info
@@ -41,8 +47,21 @@ class ContactInfoViewController: UIViewController {
         phoneFormat.insertString("-", atIndex: 9)
         self.contactNumber!.text = phoneFormat as String
         
+        var inAppInspiration = loadInAppInspirationSettingFromDefaults() as Bool
+        
+        if(inAppInspiration) {
+            self.inspirationField.text = getInspired.returnQuote()
+        }
     }
-
+    
+    func loadInAppInspirationSettingFromDefaults() -> Bool {
+        var showInspiration:Bool!
+        if let inAppSetting = self.defaultsMgr.valueForKey("inAppInspiration") as? Bool {
+            showInspiration = inAppSetting
+        }
+        return showInspiration
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

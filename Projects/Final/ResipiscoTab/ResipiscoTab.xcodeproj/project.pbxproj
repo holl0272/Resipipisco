@@ -24,6 +24,9 @@
 		5C3ECD4F1B5335310088098E /* SobrietyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */; };
 		5C3ECD511B5336570088098E /* PersonalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD501B5336570088098E /* PersonalizationViewController.swift */; };
 		5C3ECD531B5337250088098E /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD521B5337250088098E /* PasscodeViewController.swift */; };
+		5C3ECD551B58AA500088098E /* RandomInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD541B58AA500088098E /* RandomInspiration.swift */; };
+		5C3ECD571B5B501A0088098E /* InspirationMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD561B5B501A0088098E /* InspirationMasterViewController.swift */; };
+		5C3ECD591B5C5C230088098E /* FavoriteInspirationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3ECD581B5C5C230088098E /* FavoriteInspirationViewController.swift */; };
 		5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */; };
 		5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */; };
 		5C54FAE01B350BCC009233B1 /* DayCounterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */; };
@@ -73,6 +76,9 @@
 		5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobrietyDateViewController.swift; sourceTree = "<group>"; };
 		5C3ECD501B5336570088098E /* PersonalizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizationViewController.swift; sourceTree = "<group>"; };
 		5C3ECD521B5337250088098E /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		5C3ECD541B58AA500088098E /* RandomInspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomInspiration.swift; sourceTree = "<group>"; };
+		5C3ECD561B5B501A0088098E /* InspirationMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationMasterViewController.swift; sourceTree = "<group>"; };
+		5C3ECD581B5C5C230088098E /* FavoriteInspirationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteInspirationViewController.swift; sourceTree = "<group>"; };
 		5C54FADB1B34F617009233B1 /* SupportSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportSettingsViewController.swift; sourceTree = "<group>"; };
 		5C54FADD1B350888009233B1 /* MeetingFinderSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFinderSettingsViewController.swift; sourceTree = "<group>"; };
 		5C54FADF1B350BCC009233B1 /* DayCounterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCounterSettingsViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				5C3ECD4E1B5335310088098E /* SobrietyDateViewController.swift */,
 				5C3ECD501B5336570088098E /* PersonalizationViewController.swift */,
 				5C3ECD521B5337250088098E /* PasscodeViewController.swift */,
+				5C3ECD541B58AA500088098E /* RandomInspiration.swift */,
+				5C3ECD561B5B501A0088098E /* InspirationMasterViewController.swift */,
+				5C3ECD581B5C5C230088098E /* FavoriteInspirationViewController.swift */,
 			);
 			path = ResipiscoTab;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC88B0D1B477BBD00814E08 /* DataManager.swift in Sources */,
+				5C3ECD571B5B501A0088098E /* InspirationMasterViewController.swift in Sources */,
 				5C54FAE41B366BE6009233B1 /* DayCounterDashboardViewController.swift in Sources */,
 				5C15698D1B2DD0F7006E0641 /* DayCounterViewController.swift in Sources */,
 				5C1569DD1B326A97006E0641 /* PasscodeRecoveryViewController.swift in Sources */,
@@ -306,12 +316,14 @@
 				5C3ECD4F1B5335310088098E /* SobrietyDateViewController.swift in Sources */,
 				5C3ECD531B5337250088098E /* PasscodeViewController.swift in Sources */,
 				5C1569AD1B2E1CFD006E0641 /* LogInViewController.swift in Sources */,
+				5C3ECD551B58AA500088098E /* RandomInspiration.swift in Sources */,
 				5C54FAEC1B3681AC009233B1 /* MeetingFinderFavoritesViewController.swift in Sources */,
 				5C3ECD371B4EA63A0088098E /* Reachability.swift in Sources */,
 				5C54FADE1B350888009233B1 /* MeetingFinderSettingsViewController.swift in Sources */,
 				5C54FADC1B34F617009233B1 /* SupportSettingsViewController.swift in Sources */,
 				5C05352E1B4E9B2800B0656C /* MoreViewController.swift in Sources */,
 				5C54FAEE1B368252009233B1 /* MeetingFinderDashboardViewController.swift in Sources */,
+				5C3ECD591B5C5C230088098E /* FavoriteInspirationViewController.swift in Sources */,
 				5C05352C1B4E189400B0656C /* InspirationViewController.swift in Sources */,
 				5CC88B1F1B48FA7700814E08 /* ContactInfoViewController.swift in Sources */,
 				5CC88B1B1B48E8CD00814E08 /* ViewContactsViewController.swift in Sources */,

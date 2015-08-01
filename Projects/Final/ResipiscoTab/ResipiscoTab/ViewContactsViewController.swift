@@ -11,7 +11,7 @@ import UIKit
 class ViewContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func returnToSuportViewController(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("returnFromModal", sender: self)
+        self.performSegueWithIdentifier("returnToSuportViewController", sender: self)
     }
     
     @IBOutlet var tableView: UITableView!

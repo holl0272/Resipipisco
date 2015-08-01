@@ -160,6 +160,8 @@ class LogInViewController: UIViewController {
     
     //check for pin
     override func viewWillAppear(animated: Bool) {
+        
+        var getInspired:RandomInspiration = RandomInspiration()
 
         self.loadFromDefaults()
         
