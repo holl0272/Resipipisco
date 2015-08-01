@@ -89,7 +89,7 @@ class LogInViewController: UIViewController {
                 var delay = 0.25 * Double(NSEC_PER_SEC)
                 var time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
                 dispatch_after(time, dispatch_get_main_queue(), {
-                    self.tabBarController?.selectedIndex = 2
+                    self.tabBarController?.selectedIndex = 1
                 })
             }
             else {
@@ -171,12 +171,12 @@ class LogInViewController: UIViewController {
                 //clear recovered value from defaultsMgr
                 self.defaultsMgr.setValue("0", forKey:"recovered")
                 //loads center tab on app init
-                self.tabBarController?.selectedIndex = 2
+                self.tabBarController?.selectedIndex = 1
             }
         }
         else if(self.z == "initiated") {
             self.defaultsMgr.setValue("0", forKey:"appInit")
-            self.tabBarController?.selectedIndex = 2
+            self.tabBarController?.selectedIndex = 1
         }
         else {
             println(self.z)

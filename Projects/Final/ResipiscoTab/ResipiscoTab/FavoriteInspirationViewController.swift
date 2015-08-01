@@ -28,11 +28,19 @@ class FavoriteInspirationViewController: UIViewController, UITabBarDelegate {
     var quoteIDsArray = [Int]()
     var favQuoteIDsArray = [Int]()
     
+    var favCountString:String = ""
+    
+    @IBOutlet weak var noFavsView: UIView!
+    
+    @IBOutlet weak var favCountvTotal: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var favoritesButton: UITabBarItem!
     @IBOutlet weak var removeFavButton: UITabBarItem!
     
+    @IBAction func getInspiredButton(sender: UIButton) {
+        self.performSegueWithIdentifier("ReturnToTableView", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +57,15 @@ class FavoriteInspirationViewController: UIViewController, UITabBarDelegate {
         
         loadFavoritesFromDefaults()
         
-        favoritesButton.badgeValue = String(favoriteIDsArray.count)
+        favCountString = String(favoriteIDsArray.count)
+        
+        favoritesButton.badgeValue = favCountString
         
         if(favoriteIDsArray.count == 0) {
-            println("no items in the array")
+            self.noFavsView.hidden = false
         }
         else {
+            self.favCountvTotal.text = "\(pointer + 1) of \(favCountString)"
             getSomeData("Left")
         }
         
@@ -200,10 +211,12 @@ class FavoriteInspirationViewController: UIViewController, UITabBarDelegate {
                     id = Int(indexID)
                 }
                 
-                let result = "ID: \(id)\nINDEX: \(index)\n\n\(text) \n\nAuthor: \(by)"
-                
+                //let result = "ID: \(id)\nINDEX: \(index)\n\n\(text) \n\nAuthor: \(by)"
+                let result = "\(text) \n\nAuthor: \(by)"
                 dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
                     self.textView.text = result
+                    
+                    self.favCountvTotal.text = "\(self.pointer + 1) of \(self.favCountString)"
                 }
                 
             }
@@ -243,47 +256,57 @@ class FavoriteInspirationViewController: UIViewController, UITabBarDelegate {
         
         jsonCount--
         
+        println("jsonCount: \(jsonCount)")
+        
         favoritesButton.badgeValue = String(jsonCount)
-        
-        let tabArray = self.tabBar.items as NSArray!
-        let tabItem = tabArray.objectAtIndex(0) as! UITabBarItem
-        tabBar.selectedItem = tabItem
-        
-        if(pointer != 0) {
-            pointer--
-            index = viewedQuotes[pointer]
-        }
-        else {
-            index = favQuoteIDsArray[pointer]
-            viewedQuotes.append(index)
-        }
-        
-        println("pointer after delete: \(pointer)")
-        println("viewed quotes after delete: \(viewedQuotes)")
-        
-        println("new pointer \(pointer)")
-        println("new index: \(index)")
-        println("viewed: \(viewedQuotes)")
-        println("favID: \(favoriteIDsArray)")
-
-        let selectedQuote = quotes.objectAtIndex(index) as? NSDictionary
-        
-        let text = selectedQuote?.valueForKey("quote") as! String
-        let by = selectedQuote?.valueForKey("author") as! String
-        var jsonID = selectedQuote?.valueForKey("id") as! String!
-        
-        if let indexID = NSNumberFormatter().numberFromString(jsonID) {
-            id = Int(indexID)
-        }
-        
-        let result = "ID: \(id)\nINDEX: \(index)\n\n\(text) \n\nAuthor: \(by)"
-        
-        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
-            self.textView.text = result
-        }
-        
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         
+        if(jsonCount > 0) {
+            
+            let tabArray = self.tabBar.items as NSArray!
+            let tabItem = tabArray.objectAtIndex(0) as! UITabBarItem
+            tabBar.selectedItem = tabItem
+            
+            if(pointer != 0) {
+                pointer--
+                index = viewedQuotes[pointer]
+            }
+            else {
+                index = favQuoteIDsArray[pointer]
+                viewedQuotes.append(index)
+            }
+            
+            println("pointer after delete: \(pointer)")
+            println("viewed quotes after delete: \(viewedQuotes)")
+            
+            println("new pointer \(pointer)")
+            println("new index: \(index)")
+            println("viewed: \(viewedQuotes)")
+            println("favID: \(favoriteIDsArray)")
+            
+            let selectedQuote = quotes.objectAtIndex(index) as? NSDictionary
+            
+            let text = selectedQuote?.valueForKey("quote") as! String
+            let by = selectedQuote?.valueForKey("author") as! String
+            var jsonID = selectedQuote?.valueForKey("id") as! String!
+            
+            if let indexID = NSNumberFormatter().numberFromString(jsonID) {
+                id = Int(indexID)
+            }
+            
+            //let result = "ID: \(id)\nINDEX: \(index)\n\n\(text) \n\nAuthor: \(by)"
+            let result = "\(text) \n\nAuthor: \(by)"
+            
+            dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
+                self.textView.text = result
+                self.favCountString = String(self.favoriteIDsArray.count)
+                self.favCountvTotal.text = "\(self.pointer + 1) of \(self.favCountString)"
+            }
+            
+        }
+        else {
+            self.performSegueWithIdentifier("ReturnToTableView", sender: self)
+        }
         
     }
     

@@ -45,15 +45,15 @@ class MeetingFinderViewController: UIViewController {
         firstContainerView.hidden = true
         thirdContainerView.hidden = true
 
-        //hide the LogInViewController Tab
-        if let tabBarController = self.tabBarController {
-            let indexToRemove = 0
-            if indexToRemove < tabBarController.viewControllers?.count {
-                var viewControllers = tabBarController.viewControllers
-                    viewControllers?.removeAtIndex(indexToRemove)
-                    tabBarController.viewControllers = viewControllers
-            }
-        }
+//        //hide the LogInViewController Tab
+//        if let tabBarController = self.tabBarController {
+//            let indexToRemove = 0
+//            if indexToRemove < tabBarController.viewControllers?.count {
+//                var viewControllers = tabBarController.viewControllers
+//                    viewControllers?.removeAtIndex(indexToRemove)
+//                    tabBarController.viewControllers = viewControllers
+//            }
+//        }
         
     }
 
@@ -64,12 +64,12 @@ class MeetingFinderViewController: UIViewController {
     
         //let defaultsMgr = NSUserDefaults.standardUserDefaults()
     
-    override func viewWillAppear(animated: Bool) {
-        //self.defaultsMgr.setValue("1234", forKey:"pinCode")
-        self.tabBarController?.tabBar.hidden = false
-        
-    }
-    
+//    override func viewWillAppear(animated: Bool) {
+//        //self.defaultsMgr.setValue("1234", forKey:"pinCode")
+//        self.tabBarController?.tabBar.hidden = false
+//        
+//    }
+//    
     
 
 

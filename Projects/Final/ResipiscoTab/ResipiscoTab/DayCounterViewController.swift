@@ -45,6 +45,16 @@ class DayCounterViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         firstContainerView.hidden = true
         thirdContainerView.hidden = true
+        
+        //hide the LogInViewController Tab
+        if let tabBarController = self.tabBarController {
+            let indexToRemove = 0
+            if indexToRemove < tabBarController.viewControllers?.count {
+                var viewControllers = tabBarController.viewControllers
+                viewControllers?.removeAtIndex(indexToRemove)
+                tabBarController.viewControllers = viewControllers
+            }
+        }
     }
     
     
@@ -53,15 +63,23 @@ class DayCounterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//    override func viewWillAppear(animated: Bool) {
+//        
+//        self.savedPasscode = loadPasscodeFromDefaults()
+//        
+//        if(self.savedPasscode != "") {
+//        
+//        }
+//        
+//        self.tabBarController?.selectedIndex = 1
+//    }
+    
     override func viewWillAppear(animated: Bool) {
         
         self.savedPasscode = loadPasscodeFromDefaults()
+        //self.defaultsMgr.setValue("1234", forKey:"pinCode")
+        self.tabBarController?.tabBar.hidden = false
         
-        if(self.savedPasscode != "") {
-        
-        }
-        
-        self.tabBarController?.selectedIndex = 1
     }
     
     func loadPasscodeFromDefaults() -> String {

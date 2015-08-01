@@ -1146,11 +1146,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOu-vc-xV5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGo-s8-UnE">
+                                <rect key="frame" x="0.0" y="40" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IPd-Hc-8nW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-ez-vkH" userLabel="No Favs">
+                                <rect key="frame" x="0.0" y="136" width="600" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You don't currently have any favorite insitrations saved." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDB-Rb-KYc">
+                                        <rect key="frame" x="0.0" y="-136" width="423" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-0C-g7j" userLabel="Get Inspired Button">
+                                        <rect key="frame" x="258" y="160" width="84" height="30"/>
+                                        <state key="normal" title="Get Inspired">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getInspiredButton:" destination="kgp-CY-zni" eventType="touchUpInside" id="hav-hU-jgn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NPS-0C-g7j" firstAttribute="top" secondItem="Hht-ez-vkH" secondAttribute="centerY" constant="10" id="Wfn-fk-Kbh"/>
+                                    <constraint firstAttribute="centerX" secondItem="NPS-0C-g7j" secondAttribute="centerX" id="vIw-UZ-Ngy"/>
+                                </constraints>
+                            </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNZ-YJ-U9l">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1161,21 +1195,71 @@
                                     </tabBarItem>
                                 </items>
                             </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, it doesn't look like you have any favorite insitrations saved." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-Tc-l1Y">
+                                <rect key="frame" x="163" y="216" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3yJ-hC-aRF"/>
+                                    <constraint firstAttribute="width" constant="275" id="oUM-x5-uWR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VOu-vc-xV5" firstAttribute="height" secondItem="aJ2-f4-jI8" secondAttribute="height" constant="-49" id="7rr-V4-jo4"/>
-                            <constraint firstAttribute="centerX" secondItem="VOu-vc-xV5" secondAttribute="centerX" id="FYB-OT-yuQ"/>
-                            <constraint firstAttribute="centerY" secondItem="VOu-vc-xV5" secondAttribute="centerY" constant="24.5" id="H3Q-MU-dsu"/>
-                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="top" secondItem="VOu-vc-xV5" secondAttribute="bottom" id="UFn-vc-gq0"/>
-                            <constraint firstAttribute="centerX" secondItem="zNZ-YJ-U9l" secondAttribute="centerX" id="fMt-HX-im1"/>
-                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="width" secondItem="aJ2-f4-jI8" secondAttribute="width" id="hpv-x3-RlA"/>
-                            <constraint firstItem="BN8-us-1vc" firstAttribute="top" secondItem="zNZ-YJ-U9l" secondAttribute="bottom" id="kjo-AW-heR"/>
-                            <constraint firstItem="VOu-vc-xV5" firstAttribute="width" secondItem="aJ2-f4-jI8" secondAttribute="width" id="sWc-FN-znT"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="top" secondItem="AGo-s8-UnE" secondAttribute="bottom" id="087-Sp-hnh"/>
+                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="top" secondItem="VOu-vc-xV5" secondAttribute="bottom" id="6A5-7c-DBU"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="centerX" secondItem="VOu-vc-xV5" secondAttribute="centerX" id="7D9-aD-0sv"/>
+                            <constraint firstAttribute="trailing" secondItem="zNZ-YJ-U9l" secondAttribute="trailing" id="Cee-CM-Prb"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="height" secondItem="VOu-vc-xV5" secondAttribute="height" constant="-231" id="Ctq-0d-Fbf"/>
+                            <constraint firstItem="AGo-s8-UnE" firstAttribute="leading" secondItem="aJ2-f4-jI8" secondAttribute="leading" id="ETt-U9-yXV"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="leading" secondItem="AGo-s8-UnE" secondAttribute="leading" id="Ehe-Cl-0S2"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="top" secondItem="AGo-s8-UnE" secondAttribute="bottom" id="GHh-VT-4dH"/>
+                            <constraint firstAttribute="centerX" secondItem="VOu-vc-xV5" secondAttribute="centerX" id="Hxz-zP-NRx"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="trailing" secondItem="AGo-s8-UnE" secondAttribute="trailing" id="IHV-c9-hXy"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="centerY" secondItem="VOu-vc-xV5" secondAttribute="centerY" id="Iaf-Lr-6z7"/>
+                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="trailing" secondItem="VOu-vc-xV5" secondAttribute="trailing" id="Kui-TS-XUg"/>
+                            <constraint firstAttribute="width" secondItem="VOu-vc-xV5" secondAttribute="width" id="LJR-ia-rb2"/>
+                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="bottom" secondItem="BN8-us-1vc" secondAttribute="top" id="OPp-GB-7Pg"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="leading" secondItem="zNZ-YJ-U9l" secondAttribute="leading" id="P5l-y7-vDc"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="trailing" secondItem="AGo-s8-UnE" secondAttribute="trailing" id="RQ2-oC-Cap"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="leading" secondItem="aJ2-f4-jI8" secondAttribute="leading" id="T8b-Al-C0J"/>
+                            <constraint firstItem="AGo-s8-UnE" firstAttribute="leading" secondItem="VOu-vc-xV5" secondAttribute="leading" id="TY7-wt-Pxp"/>
+                            <constraint firstItem="AGo-s8-UnE" firstAttribute="top" secondItem="5QF-2D-YY4" secondAttribute="bottom" constant="20" id="X4V-R2-mm7"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="trailing" secondItem="zNZ-YJ-U9l" secondAttribute="trailing" id="Zth-So-VCi"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="leading" secondItem="zNZ-YJ-U9l" secondAttribute="leading" id="ahc-gD-Ncc"/>
+                            <constraint firstItem="zNZ-YJ-U9l" firstAttribute="leading" secondItem="VOu-vc-xV5" secondAttribute="leading" id="c1e-hS-aLL"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="centerX" secondItem="1BT-Tc-l1Y" secondAttribute="centerX" id="hL5-fR-GEx"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="top" secondItem="5QF-2D-YY4" secondAttribute="bottom" id="hlp-ob-RyW"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="centerY" secondItem="1BT-Tc-l1Y" secondAttribute="bottom" constant="19.5" id="mGm-dm-5VA"/>
+                            <constraint firstItem="AGo-s8-UnE" firstAttribute="leading" secondItem="VOu-vc-xV5" secondAttribute="leading" id="mUI-4I-Hba"/>
+                            <constraint firstItem="Hht-ez-vkH" firstAttribute="width" secondItem="VOu-vc-xV5" secondAttribute="width" id="mdl-Kh-K6y"/>
+                            <constraint firstItem="AGo-s8-UnE" firstAttribute="trailing" secondItem="VOu-vc-xV5" secondAttribute="trailing" id="rOS-Gz-kwz"/>
+                            <constraint firstItem="VOu-vc-xV5" firstAttribute="trailing" secondItem="AGo-s8-UnE" secondAttribute="trailing" id="wGK-ee-rj8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="087-Sp-hnh"/>
+                                <exclude reference="Ehe-Cl-0S2"/>
+                                <exclude reference="GHh-VT-4dH"/>
+                                <exclude reference="IHV-c9-hXy"/>
+                                <exclude reference="P5l-y7-vDc"/>
+                                <exclude reference="RQ2-oC-Cap"/>
+                                <exclude reference="T8b-Al-C0J"/>
+                                <exclude reference="Zth-So-VCi"/>
+                                <exclude reference="ahc-gD-Ncc"/>
+                                <exclude reference="wGK-ee-rj8"/>
+                                <exclude reference="TY7-wt-Pxp"/>
+                                <exclude reference="mUI-4I-Hba"/>
+                                <exclude reference="Kui-TS-XUg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="favCountvTotal" destination="AGo-s8-UnE" id="S1A-4f-W6E"/>
                         <outlet property="favoritesButton" destination="ojT-Ll-v7q" id="ogq-qj-EP6"/>
+                        <outlet property="noFavsView" destination="Hht-ez-vkH" id="Dyc-wF-t7J"/>
                         <outlet property="removeFavButton" destination="tIY-jV-L3A" id="hkK-Pj-V2G"/>
                         <outlet property="tabBar" destination="zNZ-YJ-U9l" id="GDL-1I-TDD"/>
                         <outlet property="textView" destination="VOu-vc-xV5" id="tBs-lN-D5e"/>
